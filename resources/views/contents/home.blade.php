@@ -5,12 +5,12 @@
 @section('content')
     {{-- Home Page HTML --}}
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="padding:0; height:64px; background-color: #1f1f1f;">
-        <div class="container-fluid" style="display: flex; margin: 0 80px 0 80px; padding:0">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
           </a>
-          <div class="selection-nav" style="font-size: 14px; display:flex; flex-direction:row; align-items:center;">
+          <div class="selection-nav">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
@@ -26,8 +26,43 @@
                 <div style="">
                     Register
                 </div>
-              </a>
+            </a>
+            <a class="btn btn-outline-primary" href="#">
+                <div style="">
+                    Login
+                </div>
+            </a>
           </div>
         </div>
-      </nav>
+    </nav>
+
+    <div class="header">
+        <h3>Hello, Welcome back to</h3>
+        <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
+    </div>
+
+    <div class="home-form">
+        <div class="form-group-row">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Email</span>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Password</span>
+                    <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp" placeholder="Enter your password">
+                </div>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault"> Remember me </label>
+            </div>
+            <button type="button" class="btn btn-danger">Login &#x279C;</button>
+            <div class="under-btn-text">
+                <p>Don't have an account?&nbsp;</p>
+                <p><a class="register-now" href="">Register now!</a></p>
+            </div>
+        </div>
+    </div>
+
 @endsection

@@ -1,11 +1,220 @@
 .btn.btn-primary{
-    height:35px;
-    width:80px;
-    font-size:14px;
-    align-items:center;
+    height: 35px;
+    width: 80px;
+    font-size: 14px;
+    align-items: center;
     background-color:#096eff;
     margin-left: 20px;
 }
 
+.btn.btn-outline-primary{
+    height: 35px;
+    width: 60px;
+    font-size: 14px;
+    align-items: center;
+    margin-left: 10px;
+}
 
+.navbar.navbar-expand-lg.navbar-dark{
+    padding: 0;
+    height: 64px;
+    background-color: #1f1f1f;
+}
+
+.container-fluid{
+    display: flex;
+    margin: 0 80px 0 80px;
+    padding: 0;
+}
+
+.selection-nav{
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.header h3{
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.home-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.form-group-row{
+    width: 475px;
+}
+
+.input-group.mb-3{
+    height: 45px;
+}
+
+.input-group.mb-3 span{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+    width: 80px;
+}
+
+.input-group.mb-3 input{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+input:focus::-moz-placeholder{
+    color: transparent;
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+::-moz-placeholder{
+    padding-left: 100px;
+    color: #303030;;
+ }
+
+::placeholder{
+    padding-left: 100px;
+    color: #303030;;
+ }
+
+.form-check:hover input{
+    background-color: rgb(136, 136, 136);
+}
+.form-check input:checked{
+    background-color: #636363;
+}
+
+.form-check{
+    margin-top: 20px;
+    font-size: small;
+}
+
+.btn-danger{
+    margin-top: 15px;
+    height: 33px;
+    width: 475px;
+    background-color: red;
+    font-size: small;
+}
+
+.btn-danger:hover{
+    background-color: rgb(174, 0, 0);
+}
+
+.under-btn-text{
+    margin-top: 12.5px;
+    display: flex;
+    flex-direction: row;
+    font-size: smaller;
+    justify-content: center;
+    align-items: center;
+}
+
+.under-btn-text a{
+    text-decoration: none;
+    color: rgb(174, 0, 0);
+    font-weight: 550;
+}
+
+.under-btn-text a:hover{
+    color: rgb(205, 0, 0);
+}
+
+
+
+.home-footer{
+    margin-top: auto;
+    background-color: #1f1f1f;
+    width: 100%;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text1{
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text1 p{
+    margin: 0;
+}
+
+.social-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12.5px;
+    margin-bottom: 12.5px;
+}
+
+.btn.text-white.btn-floating.m-1{
+    border-radius: 50%;
+    background-color: rgb(155, 155, 155);
+}
+
+.footer-text2{
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text2 p{
+    margin: 0;
+}
+
+.footer-text2 p a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-text2 p a:hover{
+    color: rgb(179, 179, 179);
+}
+
+.copyright-text{
+    margin-top: 12.5px;
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    font-weight: 100;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.copyright-text p{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
