@@ -10,10 +10,44 @@
 </head>
 <body style="background-color: black;">
     {{-- Header --}}
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
+          </a>
+          <div class="selection-nav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Actors</a>
+              </li>
+            </ul>
+            <a class="btn btn-primary" href="{{url('/register')}}" style="">
+                <div style="">
+                    Register
+                </div>
+            </a>
+            <a class="btn btn-outline-primary" href="{{url('/login')}}">
+                <div style="">
+                    Login
+                </div>
+            </a>
+          </div>
+        </div>
+    </nav>
+
+    {{-- Content --}}
     <div>
         @yield('content')
     </div>
     {{-- Footer --}}
+
     <div class="home-footer">
         <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:155px; height:55px; margin:20px 0 6.5px 0;">
         <div class="footer-text1">

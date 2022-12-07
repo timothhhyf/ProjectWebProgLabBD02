@@ -1,4 +1,5 @@
-@import "home.css";
+@import "nav.css";
+@import "login&register.css";
 @import "footer.css";
 
 body{

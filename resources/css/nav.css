@@ -1,0 +1,35 @@
+.btn.btn-primary{
+    height: 35px;
+    width: 80px;
+    font-size: 14px;
+    align-items: center;
+    background-color:#096eff;
+    margin-left: 20px;
+}
+
+.btn.btn-outline-primary{
+    height: 35px;
+    width: 60px;
+    font-size: 14px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.navbar.navbar-expand-lg.navbar-dark{
+    padding: 0;
+    height: 64px;
+    background-color: #1f1f1f;
+}
+
+.container-fluid{
+    display: flex;
+    margin: 0 80px 0 80px;
+    padding: 0;
+}
+
+.selection-nav{
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

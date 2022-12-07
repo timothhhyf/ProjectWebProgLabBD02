@@ -1,47 +1,11 @@
-.btn.btn-primary{
-    height: 35px;
-    width: 80px;
-    font-size: 14px;
-    align-items: center;
-    background-color:#096eff;
-    margin-left: 20px;
-}
-
-.btn.btn-outline-primary{
-    height: 35px;
-    width: 60px;
-    font-size: 14px;
-    align-items: center;
-    margin-left: 10px;
-}
-
-.navbar.navbar-expand-lg.navbar-dark{
-    padding: 0;
-    height: 64px;
-    background-color: #1f1f1f;
-}
-
-.container-fluid{
-    display: flex;
-    margin: 0 80px 0 80px;
-    padding: 0;
-}
-
-.selection-nav{
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.header{
+.header-text{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 60px;
 }
 
-.header h3{
+.header-text h3{
     font-weight: bolder;
     font-size: x-large;
 }
@@ -51,6 +15,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    margin-bottom: 60px;
 }
 
 .form-group-row{
@@ -131,3 +96,35 @@ input:focus::placeholder{
     color: rgb(205, 0, 0);
 }
 
+.form-group-row.register{
+    width: 550px;
+}
+
+.input-group.mb-3.register{
+    height: 45px;
+}
+
+.input-group.mb-3.register span{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+    width: 125px;
+}
+
+.input-group.mb-3.register input{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.input-group.mb-3.register input::placeholder{
+    padding-left: 72px;
+}
+
+.btn-danger.register{
+    margin-top: 15px;
+    height: 33px;
+    width: 550px;
+    background-color: red;
+    font-size: small;
+}
