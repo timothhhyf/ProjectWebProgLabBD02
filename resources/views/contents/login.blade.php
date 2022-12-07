@@ -30,7 +30,7 @@
                 <button type="button" class="btn btn-danger">Login &#x279C;</button>
                 <div class="under-btn-text">
                     <p>Don't have an account?&nbsp;</p>
-                    <p><a class="register-now" href="">Register now!</a></p>
+                    <p><a class="register-now" href="{{url('/register')}}">Register now!</a></p>
                 </div>
             </form>
         </div>

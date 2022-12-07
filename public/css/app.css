@@ -173,6 +173,10 @@ input:focus::placeholder{
     font-size: small;
 }
 
+.btn-danger.register:hover{
+    background-color: rgb(174, 0, 0);
+}
+
 
 .home-footer{
     margin-top: auto;
@@ -249,6 +253,7 @@ input:focus::placeholder{
 }
 
 body{
+    background-color: black;
     margin: 0;
     display: flex;
     flex-direction: column;

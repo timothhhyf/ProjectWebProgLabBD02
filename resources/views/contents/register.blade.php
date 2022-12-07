@@ -28,13 +28,13 @@
                     </div>
                     <div class="input-group mb-3 register">
                         <span class="input-group-text">Confirm Password</span>
-                        <input type="confirmpassword" class="form-control" id="exampleInputConfirmPassword1" aria-describedby="confirmPasswordHelp" placeholder="Enter your confirm password">
+                        <input type="password" class="form-control" id="exampleInputConfirmPassword1" aria-describedby="confirmPasswordHelp" placeholder="Enter your confirm password">
                     </div>
                 </div>
                 <button type="button" class="btn btn-danger register">Register &#x279C;</button>
                 <div class="under-btn-text">
                     <p>Already have an account?&nbsp;</p>
-                    <p><a class="register-now" href="">Login now!</a></p>
+                    <p><a class="login-now" href="{{url('/login')}}">Login now!</a></p>
                 </div>
             </form>
         </div>

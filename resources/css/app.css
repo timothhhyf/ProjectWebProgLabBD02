@@ -3,6 +3,7 @@
 @import "footer.css";
 
 body{
+    background-color: black;
     margin: 0;
     display: flex;
     flex-direction: column;

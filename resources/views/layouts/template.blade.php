@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
     <title>@yield('title')</title>
 </head>
-<body style="background-color: black;">
+<body>
     {{-- Header --}}
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="{{url('/')}}">
             <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
           </a>
           <div class="selection-nav">
