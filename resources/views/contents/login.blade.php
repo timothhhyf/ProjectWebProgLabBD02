@@ -16,18 +16,25 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Email</span>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email" value="{{Auth::check() ? Auth::user()->email : ''}}">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Password</span>
-                        <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="Enter your password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="Enter your password">
                     </div>
                 </div>
+                @if ($errors->any())
+                    {{-- Error msg --}}
+                    <div>
+                        {{ $errors->first() }}
+                    </div>
+                @endif
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" id="flexCheckDefault" name="remember">
                     <label class="form-check-label" for="flexCheckDefault"> Remember me </label>
                 </div>
-                <button type="button" class="btn btn-danger">Login &#x279C;</button>
+                <button type="submit" class="btn btn-danger">Login &#x279c;</button>
+                {{-- <button type="button" class="btn btn-danger">Login &#x279C;</button> --}}
                 <div class="under-btn-text">
                     <p>Don't have an account?&nbsp;</p>
                     <p><a class="register-now" href="{{url('/register')}}">Register now!</a></p>

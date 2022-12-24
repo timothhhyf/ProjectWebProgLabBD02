@@ -7,10 +7,50 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\User;
+use Hash;
 
 class UserController extends Controller
 {
     //
+    public function login(Request $request){
+        $user = User::where('email', 'like', $request->email)->get()->first();
+        $validation = [
+            'email' => 'required',
+            'password' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $validation);
+        //field not filled
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator);
+        }
+
+        //email not found
+        if($user == null){
+            $errMsg = "Email not found!";
+            return back()->withErrors(['errMsg' => $errMsg]);
+        }
+
+        $creds = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        $remember = $request->remember;
+
+        if(Auth::attempt($creds, $remember)){
+            // User authenticated
+            // if($remember){
+            //     Cookie::queue('usercookie', $request->email, 720);
+            // }
+            return view('contents.home');
+        }else{
+            // Wrong Password
+            $errMsg = "Password is incorrect!";
+            return back()->withErrors(['errMsg' => $errMsg]);
+        }
+    }
+
     public function register(Request $request){
         $user = new User();
 
@@ -46,46 +86,6 @@ class UserController extends Controller
         return view('contents.home');
     }
 
-    public function login(Request $request){
-        // $validation = [
-        //     'email' => 'required',
-        //     'password' => 'required'
-        // ];
-        // $validator = Validator::make($request->all(), $validation);
-
-        // //field not filled
-        // if($validator->fails()){
-        //     return back()->withErrors($validator);
-        // }
-
-        // $user = User::find($request->email);
-
-        // //email not found
-        // if($user == null){
-        //     $errMsg = "Email not found!";
-        //     return back()->with(['errMsg' => $errMsg]);
-        // }
-
-        // //wrong password
-        // if($user->password != $request->password){
-        //     $errMsg = "Password is incorrect!";
-        //     return back()->with(['errMsg' => $errMsg]);
-        // }
-
-        $creds = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-
-        $remember = $request->remember;
-
-        if(Auth::attempt($creds, $remember)){
-            // User authenticated
-            return view('contents.home');
-        }
-
-        return redirect()->back()->withErrors(['email' => 'Email not found', 'password' => 'Password is wrong']);
-    }
 
     public function updateProfile(Request $request){
         // find logged in user

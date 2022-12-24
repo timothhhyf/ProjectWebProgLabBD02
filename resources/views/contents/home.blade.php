@@ -5,12 +5,12 @@
 @section('content')
     {{-- Home Page HTML --}}
 
-    @if (Auth::user()->role == 'user')
+    {{-- @if (Auth::user()->role == 'user') --}}
         {{-- Kalo login user --}}
-    @endif
+    {{-- @endif --}}
 
-    @if (Auth::user()->role == 'admin')
+    {{-- @if (Auth::user()->role == 'admin') --}}
         {{-- Kalo login admin --}}
-    @endif
+    {{-- @endif --}}
 
 @endsection
