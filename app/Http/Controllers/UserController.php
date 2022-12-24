@@ -40,10 +40,7 @@ class UserController extends Controller
 
         if(Auth::attempt($creds, $remember)){
             // User authenticated
-            // if($remember){
-            //     Cookie::queue('usercookie', $request->email, 720);
-            // }
-            return view('contents.home');
+            return redirect('/');
         }else{
             // Wrong Password
             $errMsg = "Password is incorrect!";
@@ -64,8 +61,8 @@ class UserController extends Controller
         // Validation
         $validation = [
             // Rules
-            'username' => 'required | min:5 | unique:user,name',
-            'email' => 'required | unique:user,email',
+            'username' => 'required | min:5 | unique:users,name',
+            'email' => 'required | email | unique:users,email',
             'password' => 'required | alpha_num | confirmed'
         ];
         $validator = Validator::make($request->all(), $validation);
@@ -77,13 +74,14 @@ class UserController extends Controller
         // Insert data to $user
         $user->name = $request->username;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = bcrypt($request->password);
         $user->dob = null;
         $user->phone = "";
+        $user->image = "";
 
         //Save to db
-        // $user->save();
-        return view('contents.home');
+        $user->save();
+        return redirect('/login');
     }
 
 
@@ -110,11 +108,11 @@ class UserController extends Controller
         $user->phone = $request->phone;
 
         // $user->save();
-        return view('contents.home');
+        return redirect('/');
     }
 
     public function logout(){
         Auth::logout();
-        return view("contents.home");
+        return redirect('/');
     }
 }
