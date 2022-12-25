@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Add Movie')
+@section('title', 'Edit Movie')
 
 @section('content')
     <form action="" method="POST">

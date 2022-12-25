@@ -92,7 +92,7 @@ class UserController extends Controller
         // validation
         $validation = [
             'username' => 'required',
-            'email' => 'required',
+            'email' => 'required | email',
             'dob' => 'required',
             'phone' => 'required | min:5 | max:13'
         ];
@@ -108,8 +108,17 @@ class UserController extends Controller
         $user->dob = $request->dob;
         $user->phone = $request->phone;
 
-        // $user->save();
+        $user->save();
         return redirect('/');
+    }
+
+    public function saveProfilePic(Request $request){
+        $user = User::find(Auth::user()->id);
+        $image = $request->file('image');
+        $imageName = time() . '.' . $image.getClientOriginalExtension();
+        // Storage::putFileAs('public/images/users', $image, $imageName);
+        $user->image = $imageName;
+        return redirect()->back();
     }
 
     public function logout(){
