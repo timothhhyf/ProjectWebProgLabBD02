@@ -126,4 +126,9 @@ class MovieControlelr extends Controller
 
         return redirect("/", ['heroMovies' => $heroMovies]);
    }
+
+   public function searchMovie(Request $request){
+        $movies = Movie::where('title', 'LIKE', "%$request->title%");
+        return view('contents.home', ['movies' => $movies]);
+   }
 }
