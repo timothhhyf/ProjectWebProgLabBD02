@@ -18,6 +18,13 @@ class MovieControlelr extends Controller
         $director = $reques->director;
         $releaseDate = $request->releaseDate;
         // Thumbnail & background
+        $thumbnail = $request->file('thumbnail');
+        $thumbnailName = time() . '.' . $thumbnail.getClientOriginalExtension();
+        // Storage::putFileAs('public/images/movies/thumbnail', $thumbnail, $thumbnailName);
+
+        $background = $request->file('background');
+        $backgroundName = time() . '.' . $background.getClientOriginalExtension();
+        // Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
 
         // Validation
         $validation = [
