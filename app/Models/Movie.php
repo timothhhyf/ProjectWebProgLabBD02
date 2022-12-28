@@ -13,11 +13,11 @@ class Movie extends Model
     use HasFactory;
 
     public function users(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->withPivot('status');
     }
 
     public function actors(){
-        return $this->belongsToMany(Actor::class);
+        return $this->belongsToMany(Actor::class)->withPivot('character');
     }
 
     public function genres(){
