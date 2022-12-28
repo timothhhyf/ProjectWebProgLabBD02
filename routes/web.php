@@ -28,3 +28,7 @@ Route::get('/register', function(){
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
+
+Route::get('/movie/create', function(){
+    return view('contents.create-movie');
+});
