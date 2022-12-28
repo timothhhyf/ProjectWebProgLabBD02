@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
+    <script src='https://kit.fontawesome.com/c02b4811d0.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
     <title>@yield('title')</title>
 </head>
 <body>
@@ -38,6 +40,9 @@
                     Login
                 </div>
             </a>
+            <a href="/profile">
+                <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
+            </a>
           </div>
         </div>
     </nav>
@@ -46,8 +51,8 @@
     <div>
         @yield('content')
     </div>
-    {{-- Footer --}}
 
+    {{-- Footer --}}
     <div class="home-footer">
         <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:155px; height:55px; margin:20px 0 6.5px 0;">
         <div class="footer-text1">
@@ -106,4 +111,5 @@
         </div>
     </div>
 </body>
+
 </html>

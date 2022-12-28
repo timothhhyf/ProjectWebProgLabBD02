@@ -1,0 +1,37 @@
+.create-movie-content{
+    margin: 60px 80px 0 100px;
+}
+
+.header-text-create{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-create h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.create-movie{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.create-movie label{
+    font-size: small;
+}
+
+.form-group.create-movie input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.create-movie textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
