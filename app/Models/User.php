@@ -44,6 +44,6 @@ class User extends Authenticatable
     ];
 
     public function movies(){
-        return $this->belongstoMany(Movie::class);
+        return $this->belongstoMany(Movie::class)->withPivot('status');
     }
 }

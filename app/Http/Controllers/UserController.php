@@ -114,6 +114,16 @@ class UserController extends Controller
 
     public function saveProfilePic(Request $request){
         $user = User::find(Auth::user()->id);
+
+        $validation = [
+            'image' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $validation);
+        if($validator->fails()){
+            return back()->withErrors($validator);
+        }
+
         $image = $request->file('image');
         $imageName = time() . '.' . $image.getClientOriginalExtension();
         // Storage::putFileAs('public/images/users', $image, $imageName);
@@ -124,5 +134,24 @@ class UserController extends Controller
     public function logout(){
         Auth::logout();
         return redirect('/');
+    }
+
+    public function getWatchlist(){
+        $user = User::find(Auth::user()->id);
+        $movies = $user->movies;
+        return view('contents.watchlist', ['movies' => $movies]);
+    }
+
+    public function updateStatus(Request $request){
+        $movie = Movie::find($request->id);
+        $status = $request->status;
+        $user = User::find(Auth::user()->id);
+        $user->movies()->updateExistingPivot($movie, ['status' => $status]);
+        return redirect()->back();
+    }
+
+    public function filterWatchlist(Request $request){
+        $movies = Movie::wherePivot('status', $request->status);
+        return view('contents.watchlist', ['movies' => $movies]);
     }
 }

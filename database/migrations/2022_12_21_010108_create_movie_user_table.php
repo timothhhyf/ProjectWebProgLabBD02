@@ -21,7 +21,7 @@ class CreateMovieUserTable extends Migration
             // FK user table
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('status');
+            $table->string('status')->default('Planning');
             $table->timestamps();
         });
     }
