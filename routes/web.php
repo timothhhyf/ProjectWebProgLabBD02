@@ -30,3 +30,7 @@ Route::view('/create-movie', 'contents.create-movie');
 Route::view('/profile', 'contents.profile');
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
+
+Route::get('/movie/create', function(){
+    return view('contents.create-movie');
+});

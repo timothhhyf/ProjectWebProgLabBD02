@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Create Actor')
+@section('title', 'Edit Actor')
 
 @section('content')
     <form action="" method="POST">
@@ -26,7 +26,7 @@
         <label for="popularity">Popularity</label>
         <input type="number" name="popularity" id="">
 
-        <button type="submit">Create</button>
+        <button type="submit">Edit</button>
     </form>
 @endsection
 

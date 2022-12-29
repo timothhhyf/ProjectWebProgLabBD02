@@ -18,36 +18,44 @@
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
-                    <textarea class="form-control" id="descTextArea" rows="6"></textarea>
+                    <textarea class="form-control create-movie" id="descTextArea" rows="6"></textarea>
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputGenre" class="col-sm-2 col-form-label">Genre</label>
-                    <select name="genre[]" class="form-control js-example-basic-multiple" id="genre-select" multiple="multiple">
-                        <option value="">a</option>
-                        <option value="">b</option>
-                        <option value="">c</option>
-                        <option value="">d</option>
-                        <option value="">e</option>
-                        <option value="">f</option>
+                    <select class="form-select create-movie" id="my-select" name="my-select[]" multiple>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
                     </select>
                 </div>
-
-                <button type="button" class="btn btn-danger">Login &#x279C;</button>
-                <div class="under-btn-text">
-                    <p>Don't have an account?&nbsp;</p>
-                    <p><a class="register-now" href="{{url('/register')}}">Register now!</a></p>
+                <div class="form-group create-movie">
+                    <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
+                    <div class="actors-character">
+                        <div class="actor-column">
+                            <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
+                            <input class="form-control create-movie" type="text" name="actor" minlength="3" list="actor-select">
+                            <datalist name="actor" id="actor-select">
+                                <option value="andrasda"></option>
+                                <option value="andrew"></option>
+                            </datalist>
+                        </div>
+                        <div class="character-column">
+                            <label for="inputCharacter" class="col-sm-2 col-form-label">Character</label>
+                            <input type="character" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#genre-select').select2();
+        $(document).ready(function(){
+            $('#my-select').select2({
+                multiple: true
+            });
         });
     </script>
 @endsection
-
 
 

@@ -8,6 +8,10 @@
     <script src='https://kit.fontawesome.com/c02b4811d0.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.2.6/dist/css/select2-bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <title>@yield('title')</title>
 </head>
 <body>
