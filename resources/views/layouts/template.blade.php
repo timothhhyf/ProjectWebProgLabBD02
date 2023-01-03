@@ -33,6 +33,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Actors</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">My Watchlist</a>
+              </li>
             </ul>
             <a class="btn btn-primary" href="{{url('/register')}}" style="">
                 <div style="">

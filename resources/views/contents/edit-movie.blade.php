@@ -3,7 +3,7 @@
 @section('title', 'Edit Movie')
 
 @section('content')
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {{ csrf_token() }}
         <label for="title">Title</label>
         <input type="text" name="title" id="">

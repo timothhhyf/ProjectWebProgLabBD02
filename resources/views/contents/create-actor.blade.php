@@ -3,7 +3,7 @@
 @section('title', 'Create Actor')
 
 @section('content')
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {{ csrf_token() }}
         <label for="name">Name</label>
         <input type="text" name="name" id="">

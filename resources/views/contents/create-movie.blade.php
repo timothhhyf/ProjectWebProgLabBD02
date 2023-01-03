@@ -10,7 +10,7 @@
             <h3>Add Movie</h3>
         </div>
         <div class="create-movie-form">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group create-movie">
                     <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
@@ -28,7 +28,7 @@
                         <option value="3">Option 3</option>
                     </select>
                 </div>
-                <div class="form-group create-movie">
+                <div class="form-group create-movie actor-input">
                     <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
                     <div class="actors-character">
                         <div class="actor-column">
@@ -56,6 +56,14 @@
             });
         });
     </script>
+{{--
+    <script>
+        $(document).ready(function(){
+            $('#my-select').select2({
+                multiple: true
+            });
+        });
+    </script> --}}
 @endsection
 
 

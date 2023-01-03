@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 50px 80px 0 120px;
 }
 
 .my-profile{
@@ -30,8 +31,8 @@
 
 .image{
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
 }
 
 .image-img{
@@ -67,12 +68,46 @@
 }
 
 .overlay-title{
-    font-size: large;
+    font-size: small;
     font-weight: bold;
 }
 
 .update-profile{
-    margin-left: 30px;
+    margin-left: 100px;
     display: flex;
     flex-direction: column;
+    width: 550px;
+}
+
+#update-profile{
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.btn.change-image{
+    background-color: rgba(104, 104, 104, 0.375);
+}
+
+.btn.change-image:hover{
+    background-color: rgba(104, 104, 104, 0.759);
+}
+
+.btn.btn-danger.save-changes{
+    width: 550px;
+}
+
+.user-name{
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: medium;
+}
+
+.user-email{
+    font-weight: bold;
+    text-align: center;
+    font-size: medium;
+    color: #747372;
 }
