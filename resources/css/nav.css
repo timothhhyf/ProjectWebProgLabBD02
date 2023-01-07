@@ -33,3 +33,55 @@
     flex-direction: row;
     align-items: center;
 }
+
+.btn-group.profile-nav a i:hover{
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    min-width: 120px !important;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    margin-top: 40px;
+    font-size: small;
+    background-color: white;
+    border-radius: 4px !important;
+}
+
+.dropdown-menu a{
+    color: black;
+    padding-top: 10px;
+}
+
+.dropdown-item.logout-option p{
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.dropdown-item.profile-option p{
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+.dropdown-item.profile-option{
+    border-radius: 3px 3px 0 0;
+    padding-bottom: 0px;
+}
+
+.dropdown-item.logout-option {
+    border-radius: 0 0 3px 3px;
+}
+
+.dropdown-item p{
+    text-indent: 10%;
+}
+
+.dropdown-item.profile-option p{
+    border-bottom: 1px solid rgb(167, 167, 167);
+}
+
+.dropdown-item:hover{
+    background-color: rgb(210, 210, 210);
+    color: black;
+}

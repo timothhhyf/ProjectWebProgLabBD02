@@ -1,0 +1,240 @@
+.create-movie-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-create{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-create h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.create-movie{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.create-movie label{
+    font-size: small;
+}
+
+.form-group.create-movie input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.create-movie textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.create-movie span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.select2-selection__choice{
+    width: 80px;
+    font-size: small;
+}
+
+.select2-selection__choice__display{
+    margin-left: 20px;
+    background-color: black !important;
+    color: white;
+}
+
+.select2-selection__choice__remove span {
+    background-color: black !important;
+    color: white;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+    background-color: black;
+}
+
+.select2-selection__choice__remove:hover span{
+    background-color: white !important;
+    color: black;
+}
+
+.select2-container--open{
+    color: black;
+    font-size: small;
+}
+
+.actors-character{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 10px 0 10px;
+    width: inherit;
+}
+
+.actor-column{
+    width: 100%;
+    padding-right: 10px;
+}
+
+.actor-column select{
+    background-color:#1f1f1f;
+    color: white;
+    font-size: small;
+    height: 35px;
+}
+
+.actor-column datalist option{
+    background-color: white;
+    color: black;
+}
+
+.character-column{
+    font-size: small;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.span-char{
+    display: flex;
+    justify-content: space-between;
+}
+
+.span-char a{
+    align-self: center;
+}
+
+.span-char i{
+    font-size: smaller;
+}
+
+.span-char i:hover{
+    color: red;
+}
+
+#actor-select{
+    max-height: 10px;
+}
+
+.add-more-button{
+    display: flex;
+    justify-content: end;
+}
+
+.btn.btn-info.add-more{
+    font-size: small;
+    background-color:#096eff;
+    padding: 3px 6px 3px 6px;
+    margin: 20px 10px 0 0;
+}
+
+.btn.btn-info.add-more:hover{
+    background-color:#004cb5;
+}
+
+.actor-column input::placeholder{
+    color: white;
+    padding: 0;
+}
+
+.actor-column input:focus::placeholder{
+    color: transparent;
+}
+
+#formImageFile::file-selector-button{
+    background-color: white;
+    color: black;
+}
+
+#formImageFile:hover::file-selector-button{
+    background-color: rgb(161, 161, 161);
+}
+
+#formBackgroundFile::file-selector-button{
+    background-color: white;
+    color: black;
+}
+
+#formBackgroundFile:hover::file-selector-button{
+    background-color: rgb(161, 161, 161);
+}
+
+.form-group.create-movie label{
+    width: 100%;
+}
+
+.btn.btn-danger.create-movie{
+    width: 100%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.create-movie:hover{
+    background-color: #b12b38;
+}
+
+.edit-movie-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-edit{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-edit h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.edit-movie{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.edit-movie label{
+    font-size: small;
+}
+
+.form-group.edit-movie input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-movie textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-movie span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.edit-movie label{
+    width: 100%;
+}
+
+.btn.btn-danger.edit-movie{
+    width: 100%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.edit-movie:hover{
+    background-color: #b12b38;
+}

@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.2.6/dist/css/select2-bootstrap4.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>@yield('title')</title>
 </head>
 <body>
@@ -19,38 +21,44 @@
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{url('/')}}">
-            <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
-          </a>
-          <div class="selection-nav">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Movies</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Actors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">My Watchlist</a>
-              </li>
-            </ul>
-            <a class="btn btn-primary" href="{{url('/register')}}" style="">
-                <div style="">
-                    Register
+            <a class="navbar-brand" href="{{url('/')}}">
+                <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
+            </a>
+            <div class="selection-nav">
+                <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Actors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Watchlist</a>
+                </li>
+                </ul>
+                <a class="btn btn-primary" href="{{url('/register')}}" style="">
+                    <div style="">
+                        Register
+                    </div>
+                </a>
+                <a class="btn btn-outline-primary" href="{{url('/login')}}">
+                    <div style="">
+                        Login
+                    </div>
+                </a>
+                <div class="btn-group profile-nav" role="group">
+                    <a data-toggle="dropdown">
+                        <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                            <a class="dropdown-item profile-option" href="/profile"><p>Profile</p></a>
+                            <a class="dropdown-item logout-option" href="#"><p>Logout</p></a>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            <a class="btn btn-outline-primary" href="{{url('/login')}}">
-                <div style="">
-                    Login
-                </div>
-            </a>
-            <a href="/profile">
-                <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
-            </a>
-          </div>
+            </div>
         </div>
     </nav>
 
@@ -69,35 +77,35 @@
         <div class="social-container">
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.twitter.com/" target="_blank"
             role="button"
             ><i class="fa fa-twitter" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.instagram.com/" target="_blank"
             role="button"
             ><i class="fa fa-instagram" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.facebook.com/" target="_blank"
             role="button"
             ><i class="fa fa-facebook" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.reddit.com/" target="_blank"
             role="button"
             ><i class="fa fa-reddit-alien" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.youtube.com/" target="_blank"
             role="button"
             ><i class="fa fa-youtube-play" style="font-size: 20px"></i
             ></a>

@@ -35,6 +35,58 @@
     align-items: center;
 }
 
+.btn-group.profile-nav a i:hover{
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    min-width: 120px !important;
+    position: absolute;
+    right: 0;
+    padding: 0;
+    margin-top: 40px;
+    font-size: small;
+    background-color: white;
+    border-radius: 4px !important;
+}
+
+.dropdown-menu a{
+    color: black;
+    padding-top: 10px;
+}
+
+.dropdown-item.logout-option p{
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.dropdown-item.profile-option p{
+    margin: 0;
+    padding-bottom: 8px;
+}
+
+.dropdown-item.profile-option{
+    border-radius: 3px 3px 0 0;
+    padding-bottom: 0px;
+}
+
+.dropdown-item.logout-option {
+    border-radius: 0 0 3px 3px;
+}
+
+.dropdown-item p{
+    text-indent: 10%;
+}
+
+.dropdown-item.profile-option p{
+    border-bottom: 1px solid rgb(167, 167, 167);
+}
+
+.dropdown-item:hover{
+    background-color: rgb(210, 210, 210);
+    color: black;
+}
+
 .header-text{
     display: flex;
     flex-direction: row;
@@ -254,7 +306,7 @@ input:focus::placeholder{
 }
 
 .create-movie-content{
-    margin: 60px 80px 0 100px;
+    margin: 60px 80px 60px 100px;
 }
 
 .header-text-create{
@@ -293,6 +345,8 @@ input:focus::placeholder{
 
 .form-group.create-movie span{
     background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
     width: 100% !important;
 }
 
@@ -329,13 +383,14 @@ input:focus::placeholder{
 .actors-character{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 10px 0 10px;
     width: inherit;
 }
 
 .actor-column{
-    width: 846px;
+    width: 100%;
+    padding-right: 10px;
 }
 
 .actor-column select{
@@ -352,11 +407,152 @@ input:focus::placeholder{
 
 .character-column{
     font-size: small;
-    width: 846px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.span-char{
+    display: flex;
+    justify-content: space-between;
+}
+
+.span-char a{
+    align-self: center;
+}
+
+.span-char i{
+    font-size: smaller;
+}
+
+.span-char i:hover{
+    color: red;
 }
 
 #actor-select{
     max-height: 10px;
+}
+
+.add-more-button{
+    display: flex;
+    justify-content: end;
+}
+
+.btn.btn-info.add-more{
+    font-size: small;
+    background-color:#096eff;
+    padding: 3px 6px 3px 6px;
+    margin: 20px 10px 0 0;
+}
+
+.btn.btn-info.add-more:hover{
+    background-color:#004cb5;
+}
+
+.actor-column input::-moz-placeholder{
+    color: white;
+    padding: 0;
+}
+
+.actor-column input::placeholder{
+    color: white;
+    padding: 0;
+}
+
+.actor-column input:focus::-moz-placeholder{
+    color: transparent;
+}
+
+.actor-column input:focus::placeholder{
+    color: transparent;
+}
+
+#formImageFile::file-selector-button{
+    background-color: white;
+    color: black;
+}
+
+#formImageFile:hover::file-selector-button{
+    background-color: rgb(161, 161, 161);
+}
+
+#formBackgroundFile::file-selector-button{
+    background-color: white;
+    color: black;
+}
+
+#formBackgroundFile:hover::file-selector-button{
+    background-color: rgb(161, 161, 161);
+}
+
+.form-group.create-movie label{
+    width: 100%;
+}
+
+.btn.btn-danger.create-movie{
+    width: 100%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.create-movie:hover{
+    background-color: #b12b38;
+}
+
+.edit-movie-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-edit{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-edit h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.edit-movie{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.edit-movie label{
+    font-size: small;
+}
+
+.form-group.edit-movie input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-movie textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-movie span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.edit-movie label{
+    width: 100%;
+}
+
+.btn.btn-danger.edit-movie{
+    width: 100%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.edit-movie:hover{
+    background-color: #b12b38;
 }
 
 .profile{
@@ -532,6 +728,134 @@ font-size: medium;
 
 .btn.save-changes:hover{
     background-color: rgb(213, 2, 2);
+}
+
+.add-actor-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-add-actor{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-add-actor h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.add-actor{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.add-actor label{
+    font-size: small;
+}
+
+.form-group.add-actor input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.add-actor textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.add-actor span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.add-actor label{
+    width: 100%;
+}
+
+.btn.btn-danger.add-actor{
+    width: 27%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.add-actor:hover{
+    background-color: #b12b38;
+}
+
+.form-group.add-actor select{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.edit-actor-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-edit-actor{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-edit-actor h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.edit-actor{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.edit-actor label{
+    font-size: small;
+}
+
+.form-group.edit-actor input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-actor textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-actor span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.edit-actor label{
+    width: 100%;
+}
+
+.btn.btn-danger.edit-actor{
+    width: 27%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.edit-actor:hover{
+    background-color: #b12b38;
+}
+
+.form-group.edit-actor select{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
 }
 
 body{

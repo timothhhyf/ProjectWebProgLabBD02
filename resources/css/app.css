@@ -2,9 +2,10 @@
 @import "login&register.css";
 @import "footer.css";
 @import url(//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular);
-@import "create-movie.css";
+@import "edit-create-movie.css";
 @import "profile.css";
 @import "modal.css";
+@import "edit-create-actor.css";
 
 body{
     background-color: black;

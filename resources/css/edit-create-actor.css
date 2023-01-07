@@ -1,0 +1,127 @@
+.add-actor-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-add-actor{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-add-actor h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.add-actor{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.add-actor label{
+    font-size: small;
+}
+
+.form-group.add-actor input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.add-actor textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.add-actor span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.add-actor label{
+    width: 100%;
+}
+
+.btn.btn-danger.add-actor{
+    width: 27%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.add-actor:hover{
+    background-color: #b12b38;
+}
+
+.form-group.add-actor select{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.edit-actor-content{
+    margin: 60px 80px 60px 100px;
+}
+
+.header-text-edit-actor{
+    display: flex;
+    justify-content: left;
+}
+
+.header-text-edit-actor h3{
+    font-weight: bolder;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "NTF-Grand-Regular", sans-serif;
+}
+
+.form-group.edit-actor{
+    margin: 8px 0 8px 0;
+    width: inherit;
+}
+
+.form-group.edit-actor label{
+    font-size: small;
+}
+
+.form-group.edit-actor input{
+    height: 35px;
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-actor textarea{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
+
+.form-group.edit-actor span{
+    background-color: #1f1f1f;
+    border-color: transparent;
+    border-radius: 7.5px;
+    width: 100% !important;
+}
+
+.form-group.edit-actor label{
+    width: 100%;
+}
+
+.btn.btn-danger.edit-actor{
+    width: 27%;
+    background-color: #dc3445;
+}
+
+.btn.btn-danger.edit-actor:hover{
+    background-color: #b12b38;
+}
+
+.form-group.edit-actor select{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+}
