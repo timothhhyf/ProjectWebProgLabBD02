@@ -26,5 +26,16 @@ Route::get('/register', function(){
     return view('contents.register');
 });
 
+// return view buat test
+Route::view('/edit-movie', 'contents.edit-movie');
+Route::view('/create-movie', 'contents.create-movie');
+Route::view('/profile', 'contents.profile');
+Route::view('/create-actor', 'contents.create-actor');
+Route::view('/edit-actor', 'contents.edit-actor');
+
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
+
+Route::get('/movie/create', function(){
+    return view('contents.create-movie');
+});

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Models\Genre;
 
 class MovieControlelr extends Controller
 {
@@ -49,7 +50,11 @@ class MovieControlelr extends Controller
         $movie->title = $request->title;
         $movie->description = $request->description;
         // $movie->genre = $request->genre;
+        $genres = Genre::whereIn('id', $genre)->get();
+        $movie->genres()->attach($genres);
         // $movie->actor = $request->actor;
+        $actors = Actor::whereIn('id', $actor)->get();
+        $movie->actors()->attach($actors, ['character' => $charName]);
         // $movie->charName = $request->charName;
         $movie->director = $reques->director;
         $movie->release_date = $request->releaseDate;
@@ -104,13 +109,16 @@ class MovieControlelr extends Controller
         $movie->title = $request->title;
         $movie->description = $request->description;
         // $movie->genre = $request->genre;
+        $genres = Genre::whereIn('id', $genre)->get();
+        $movie->genres()->attach($genres);
         // $movie->actor = $request->actor;
+        $actors = Actor::whereIn('id', $actor)->get();
+        $movie->actors()->attach($actors, ['character' => $charName]);
         // $movie->charName = $request->charName;
         $movie->director = $reques->director;
         $movie->release_date = $request->releaseDate;
         $movie->image = $thumbnailName;
         $movie->background_img = $backgroundName;
-
         //Save to db
         $movie->save();
         return redirect()->back();

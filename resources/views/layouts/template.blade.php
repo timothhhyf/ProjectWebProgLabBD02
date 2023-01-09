@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
+    <script src='https://kit.fontawesome.com/c02b4811d0.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@1.2.6/dist/css/select2-bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>@yield('title')</title>
 </head>
 <body>
@@ -13,32 +21,44 @@
     <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{{url('/')}}">
-            <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
-          </a>
-          <div class="selection-nav">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Movies</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Actors</a>
-              </li>
-            </ul>
-            <a class="btn btn-primary" href="{{url('/register')}}" style="">
-                <div style="">
-                    Register
-                </div>
+            <a class="navbar-brand" href="{{url('/')}}">
+                <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:100px; height:30px;">
             </a>
-            <a class="btn btn-outline-primary" href="{{url('/login')}}">
-                <div style="">
-                    Login
+            <div class="selection-nav">
+                <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Actors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">My Watchlist</a>
+                </li>
+                </ul>
+                <a class="btn btn-primary" href="{{url('/register')}}" style="">
+                    <div style="">
+                        Register
+                    </div>
+                </a>
+                <a class="btn btn-outline-primary" href="{{url('/login')}}">
+                    <div style="">
+                        Login
+                    </div>
+                </a>
+                <div class="btn-group profile-nav" role="group">
+                    <a data-toggle="dropdown">
+                        <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                            <a class="dropdown-item profile-option" href="/profile"><p>Profile</p></a>
+                            <a class="dropdown-item logout-option" href="#"><p>Logout</p></a>
+                        </div>
+                    </a>
                 </div>
-            </a>
-          </div>
+            </div>
         </div>
     </nav>
 
@@ -46,8 +66,8 @@
     <div>
         @yield('content')
     </div>
-    {{-- Footer --}}
 
+    {{-- Footer --}}
     <div class="home-footer">
         <img src="{{url('/asset/MovieListLogo.png')}}" alt="Image" style="width:155px; height:55px; margin:20px 0 6.5px 0;">
         <div class="footer-text1">
@@ -57,35 +77,35 @@
         <div class="social-container">
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.twitter.com/" target="_blank"
             role="button"
             ><i class="fa fa-twitter" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.instagram.com/" target="_blank"
             role="button"
             ><i class="fa fa-instagram" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.facebook.com/" target="_blank"
             role="button"
             ><i class="fa fa-facebook" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.reddit.com/" target="_blank"
             role="button"
             ><i class="fa fa-reddit-alien" style="font-size: 20px"></i
             ></a>
 
             <a
             class="btn text-white btn-floating m-1"
-            href="#"
+            href="https://www.youtube.com/" target="_blank"
             role="button"
             ><i class="fa fa-youtube-play" style="font-size: 20px"></i
             ></a>
@@ -106,4 +126,5 @@
         </div>
     </div>
 </body>
+
 </html>

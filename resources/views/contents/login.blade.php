@@ -11,7 +11,7 @@
 
     <div class="home-form">
         <div class="form-group-row">
-            <form action="{{url('/login/authLogin')}}" method="post">
+            <form action="{{url('/login/authLogin')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <div class="input-group mb-3">

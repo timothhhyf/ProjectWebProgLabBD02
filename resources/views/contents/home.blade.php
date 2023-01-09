@@ -5,16 +5,16 @@
 @section('content')
     {{-- Home Page HTML --}}
 
-    @if (Auth::check() && Auth::user()->role == 'user')
+    {{-- @if (Auth::check() && Auth::user()->role == 'user') --}}
         {{-- Kalo login user --}}
-    @endif
+    {{-- @endif --}}
 
-    @if (Auth::check() && Auth::user()->role == 'admin')
+    {{-- @if (Auth::check() && Auth::user()->role == 'admin') --}}
         {{-- Kalo login admin --}}
-    @endif
+    {{-- @endif --}}
 
     {{-- Carousel, yang geser2 itu --}}
-    @foreach ($heroMovies as $hm)
+    {{-- @foreach ($heroMovies as $hm)
         {{ Storage::url('images/movies/background/'.$hm->background_img); }}
         {{ $hm->title }}
         {{ $hm->description }}
@@ -22,12 +22,12 @@
         @foreach ($hm->genres() as $g)
             {{ $g->name }}
         @endforeach
-    @endforeach
+    @endforeach --}}
 
     {{-- Show movies --}}
-    @foreach ($allMovies as $am)
+    {{-- @foreach ($allMovies as $am)
         {{ Storage::url('images/movies/thumbnail/'.$am->image); }}
         {{ $am->title }}
         {{ date('Y', strtotime($am->release_date)) }}
-    @endforeach
+    @endforeach --}}
 @endsection
