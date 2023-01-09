@@ -62,7 +62,6 @@ class UserController extends Controller
         $validation = [
             // Rules
             'username' => 'required | min:5 | unique:users,name',
-            // email validation still needs work
             'email' => 'required | email | unique:users,email',
             'password' => 'required | alpha_num | confirmed'
         ];

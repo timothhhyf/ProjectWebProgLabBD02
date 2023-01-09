@@ -23,9 +23,12 @@
                 <div class="form-group create-movie">
                     <label for="inputGenre" class="col-sm-2 col-form-label">Genre</label>
                     <select class="form-select create-movie" id="my-select" name="genre[]" multiple>
-                        <option value="1">Option 1</option>
+                        {{-- <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="3">Option 3</option> --}}
+                        @foreach ($genres as $g)
+                            <option value="{{ $g->id }}">{{ $g->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group create-movie">
@@ -36,8 +39,11 @@
                                 <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
                                 <input class="form-control create-movie" type="text" name="actor" minlength="3" list="actor-select" placeholder="--Open this select menu--">
                                 <datalist name="actors-list" id="actor-select">
-                                    <option value="andrasda"></option>
-                                    <option value="andrew"></option>
+                                    {{-- <option value="andrasda"></option>
+                                    <option value="andrew"></option> --}}
+                                    @foreach ($actors as $a)
+                                        <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                    @endforeach
                                 </datalist>
                             </div>
                             <div class="character-column">
@@ -52,8 +58,11 @@
                                 <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
                                 <input class="form-control create-movie" type="text" name="actor" minlength="3" list="actor-select" placeholder="--Open this select menu--">
                                 <datalist name="actors-list" id="actor-select">
-                                    <option value="andrasda"></option>
-                                    <option value="andrew"></option>
+                                    {{-- <option value="andrasda"></option>
+                                    <option value="andrew"></option> --}}
+                                    @foreach ($actors as $a)
+                                        <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                    @endforeach
                                 </datalist>
                             </div>
                             <div class="character-column">
@@ -107,8 +116,11 @@
                 html+='<label for="inputActor" class="col-sm-2 col-form-label">Actor</label>'
                 html+='<input class="form-control create-movie" type="text" name="actor" minlength="3" list="actor-select" placeholder="--Open this select menu--">'
                 html+='<datalist name="actors-list" id="actor-select">'
-                html+='<option value="andrasda"></option>'
-                html+='<option value="andrew"></option>'
+                html+= '@foreach ($actors as $a)'
+                html+= '<option value="{{ $a->id }}">{{ $a->name }}</option>'
+                html+= '@endforeach'
+                // html+='<option value="andrasda"></option>'
+                // html+='<option value="andrew"></option>'
                 html+='</datalist>'
                 html+='</div>'
                 html+='<div class="character-column">'

@@ -24,16 +24,16 @@ class ActorController extends Controller
     public function addActor(Request $request){
         $actor = new Actor();
 
-        $name = $request->name;
-        $gender = $request->gender;
-        $biography = $request->biography;
-        $dob = $request->dob;
-        $pob = $request->pob;
-        $popularity = $request->popularity;
+        $name = $request->actorName;
+        $gender = $request->actorGender;
+        $biography = $request->actorBio;
+        $dob = $request->actorDOB;
+        $pob = $request->actorPOB;
+        $popularity = $request->actorPopularity;
         // Image save
-        $image = file('image');
+        $image = file('actorImage');
         $imageName = time() . '.' . $image.getClientOriginalExtension();
-        // Storage::putFileAs('public/images/actors', $image, $imageName);
+        Storage::putFileAs('public/images/actors', $image, $imageName);
 
         // Validation
         $validation = [
@@ -69,16 +69,16 @@ class ActorController extends Controller
     public function updateActor(Request $request){
         $actor = Actor::find($request->id);
 
-        $name = $request->name;
-        $gender = $request->gender;
-        $biography = $request->biography;
-        $dob = $request->dob;
-        $pob = $request->pob;
-        $popularity = $request->popularity;
+        $name = $request->actorName;
+        $gender = $request->actorGender;
+        $biography = $request->actorBio;
+        $dob = $request->actorDOB;
+        $pob = $request->actorPOB;
+        $popularity = $request->actorPopularity;
         // Image save
-        $image = file('image');
+        $image = file('actorImage');
         $imageName = time() . '.' . $image.getClientOriginalExtension();
-        // Storage::putFileAs('public/images/actors', $image, $imageName);
+        Storage::putFileAs('public/images/actors', $image, $imageName);
 
         // Validation
         $validation = [

@@ -24,9 +24,11 @@
                 </div>
             </div>
             <div class="user-name">
+                {{ Auth::user()->name }}
                 Name
             </div>
             <div class="user-email">
+                {{ Auth::user()->email }}
                 blablabla@gmail.com
             </div>
         </div>
@@ -38,19 +40,19 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Username</span>
-                        <input type="username" class="form-control" value="Old Username"  autocomplete="Username">
+                        <input name="username" type="username" class="form-control" value="Old Username"  autocomplete="Username">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Email</span>
-                        <input type="email" class="form-control" value="Old Email"  autocomplete="Email">
+                        <input name="email" type="email" class="form-control" value="Old Email"  autocomplete="Email">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">DOB</span>
-                        <input type="date" class="form-control" value="Old DOB"  autocomplete="DOB">
+                        <input name="dob" type="date" class="form-control" value="Old DOB"  autocomplete="DOB">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Phone</span>
-                        <input type="phone" class="form-control" value="Old Phone"  autocomplete="Phone">
+                        <input name="phone" type="phone" class="form-control" value="Old Phone"  autocomplete="Phone">
                     </div>
                     <button class="btn btn-danger save-changes">Save Changes</button>
                 </div>

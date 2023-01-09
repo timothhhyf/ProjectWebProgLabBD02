@@ -35,10 +35,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Actors</a>
                 </li>
+            </ul>
+            @auth
                 <li class="nav-item">
                     <a class="nav-link" href="#">My Watchlist</a>
                 </li>
-                </ul>
+                <div class="btn-group profile-nav" role="group">
+                    <a data-toggle="dropdown">
+                        <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
+                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
+                            <a class="dropdown-item profile-option" href="/profile"><p>Profile</p></a>
+                            <a class="dropdown-item logout-option" href="#"><p>Logout</p></a>
+                        </div>
+                    </a>
+                </div>
+            @else
                 <a class="btn btn-primary" href="{{url('/register')}}" style="">
                     <div style="">
                         Register
@@ -49,15 +60,7 @@
                         Login
                     </div>
                 </a>
-                <div class="btn-group profile-nav" role="group">
-                    <a data-toggle="dropdown">
-                        <i class='fa-solid fa-circle-user' aria-hidden="true" style="font-size: 30px; color:grey"></i>
-                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" style="">
-                            <a class="dropdown-item profile-option" href="/profile"><p>Profile</p></a>
-                            <a class="dropdown-item logout-option" href="#"><p>Logout</p></a>
-                        </div>
-                    </a>
-                </div>
+            @endauth
             </div>
         </div>
     </nav>

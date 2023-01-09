@@ -24,6 +24,13 @@
         @endforeach
     @endforeach --}}
 
+    {{-- Popular --}}
+    {{-- @foreach ($popular as $p)
+        { Storage::url('images/movies/thumbnail/'.$p->image); }}
+        {{ $p->title }}
+        {{ date('Y', strtotime($p->release_date)) }}
+    @endforeach --}}
+
     {{-- Show movies --}}
     {{-- @foreach ($allMovies as $am)
         {{ Storage::url('images/movies/thumbnail/'.$am->image); }}
