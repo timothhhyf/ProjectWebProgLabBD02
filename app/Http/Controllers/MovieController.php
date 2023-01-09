@@ -15,16 +15,16 @@ class MovieControlelr extends Controller
         $genre = $request->genre;
         $actor = $request->actor;
         $charName = $request->charName;
-        $director = $reques->director;
+        $director = $request->director;
         $releaseDate = $request->releaseDate;
         // Thumbnail & background
-        $thumbnail = $request->file('thumbnail');
+        $thumbnail = $request->file('movieImage');
         $thumbnailName = time() . '.' . $thumbnail.getClientOriginalExtension();
-        // Storage::putFileAs('public/images/movies/thumbnail', $thumbnail, $thumbnailName);
+        Storage::putFileAs('public/images/movies/thumbnail', $thumbnail, $thumbnailName);
 
-        $background = $request->file('background');
+        $background = $request->file('movieBackgroundImage');
         $backgroundName = time() . '.' . $background.getClientOriginalExtension();
-        // Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
+        Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
 
         // Validation
         $validation = [
