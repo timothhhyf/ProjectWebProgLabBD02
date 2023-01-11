@@ -4,6 +4,8 @@
 
 @section('content')
 
+    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
+
     <div class="add-actor-content">
         <div class="header-text-add-actor">
             <h3>Add Actor</h3>

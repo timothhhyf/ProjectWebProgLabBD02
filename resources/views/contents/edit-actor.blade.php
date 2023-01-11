@@ -4,9 +4,11 @@
 
 @section('content')
 
+    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
+
     <div class="edit-actor-content">
         <div class="header-text-edit-actor">
-            <h3>Add Actor</h3>
+            <h3>Edit Actor</h3>
         </div>
         <div class="edit-actor-form">
             <form action="" method="post" enctype="multipart/form-data">
