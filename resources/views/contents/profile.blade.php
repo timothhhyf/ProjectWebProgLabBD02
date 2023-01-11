@@ -25,11 +25,11 @@
             </div>
             <div class="user-name">
                 {{ Auth::user()->name }}
-                Name
+                {{-- Name --}}
             </div>
             <div class="user-email">
                 {{ Auth::user()->email }}
-                blablabla@gmail.com
+                {{-- blablabla@gmail.com --}}
             </div>
         </div>
 

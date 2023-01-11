@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Actor;
 
@@ -23,42 +24,50 @@ class ActorController extends Controller
 
     public function addActor(Request $request){
         $actor = new Actor();
-
-        $name = $request->actorName;
-        $gender = $request->actorGender;
-        $biography = $request->actorBio;
-        $dob = $request->actorDOB;
-        $pob = $request->actorPOB;
-        $popularity = $request->actorPopularity;
-        // Image save
-        $image = file('actorImage');
-        $imageName = time() . '.' . $image.getClientOriginalExtension();
-        Storage::putFileAs('public/images/actors', $image, $imageName);
-
         // Validation
         $validation = [
             // Rules
-            'name' => 'required | min:3',
-            'gender' => 'required',
-            'biography' => 'required | min:10',
-            'dob' => 'required',
-            'pob' => 'required',
-            'image' => 'required | image',
-            'popularity' => 'required | numeric'
+            'actorName' => 'required | min:3',
+            'actorGender' => 'required',
+            'actorBio' => 'required | min:10',
+            'actorDOB' => 'required',
+            'actorPOB' => 'required',
+            'actorImage' => 'required | image',
+            'actorPopularity' => 'required | numeric'
         ];
-        $validator = Validator::make($request->all(), $validation);
+
+        $errorMsg = [
+            'actorName.required' => "Name must be filled.",
+            'actorName.min' => "The name must be longer than 3 characters.",
+            'actorGender' => "Gender must be selected.",
+            'actorBio.required' => "Biography must be filled.",
+            'actorBio.min' => "Biography must be longer than 10 characters.",
+            'actorDOB' => "Date of birth must be filled.",
+            'actorPOB' => "Place of birth must be filled.",
+            'actorImage.required' => "Image must be uploaded.",
+            'actorImage.image' => "Image type is not supported.",
+            'actorPopularity.required' => "Popularity must be filled.",
+            'actorPopularity.numeric' => "Popularity must in numbers."
+        ];
+
+        $validator = Validator::make($request->all(), $validation, $errorMsg);
 
         if($validator->fails()){
             return back()->withErrors($validator);
         }
 
+        // Image save
+        $image = $request->file('actorImage');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        Storage::putFileAs('public/images/actors', $image, $imageName);
+
         // Insert data to $actor
-        $actor->name = $request->name;
-        $actor->gender = $request->gender;
-        $actor->biography = $request->biography;
-        $actor->dob = $request->dob;
-        $actor->pob = $request->pob;
-        $actor->popularity = $request->popularity;
+        $actor->name = $request->actorName;
+        $actor->gender = $request->actorGender;
+        $actor->biography = $request->actorBio;
+        $actor->dob = $request->actorDOB;
+        $actor->pob = $request->actorPOB;
+        $actor->popularity = $request->actorPopularity;
         $actor->image = $imageName;
 
         //Save to db
@@ -68,34 +77,42 @@ class ActorController extends Controller
 
     public function updateActor(Request $request){
         $actor = Actor::find($request->id);
-
-        $name = $request->actorName;
-        $gender = $request->actorGender;
-        $biography = $request->actorBio;
-        $dob = $request->actorDOB;
-        $pob = $request->actorPOB;
-        $popularity = $request->actorPopularity;
-        // Image save
-        $image = file('actorImage');
-        $imageName = time() . '.' . $image.getClientOriginalExtension();
-        Storage::putFileAs('public/images/actors', $image, $imageName);
-
         // Validation
         $validation = [
             // Rules
-            'name' => 'required | min:3',
-            'gender' => 'required',
-            'biography' => 'required | min:10',
-            'dob' => 'required',
-            'pob' => 'required',
-            'image' => 'required | image',
-            'popularity' => 'required | numeric'
+            'actorName' => 'required | min:3',
+            'actorGender' => 'required',
+            'actorBio' => 'required | min:10',
+            'actorDOB' => 'required',
+            'actorPOB' => 'required',
+            'actorImage' => 'required | image',
+            'actorPopularity' => 'required | numeric'
         ];
-        $validator = Validator::make($request->all(), $validation);
+
+        $errorMsg = [
+            'actorName.required' => "Name must be filled.",
+            'actorName.min' => "The name must be longer than 3 characters.",
+            'actorGender' => "Gender must be selected.",
+            'actorBio.required' => "Biography must be filled.",
+            'actorBio.min' => "Biography must be longer than 10 characters.",
+            'actorDOB' => "Date of birth must be filled.",
+            'actorPOB' => "Place of birth must be filled.",
+            'actorImage.required' => "Image must be uploaded.",
+            'actorImage.image' => "Image type is not supported.",
+            'actorPopularity.required' => "Popularity must be filled.",
+            'actorPopularity.numeric' => "Popularity must in numbers."
+        ];
+        $validator = Validator::make($request->all(), $validation, $errorMsg);
 
         if($validator->fails()){
             return back()->withErrors($validator);
         }
+
+        // Image save
+        $image = file('actorImage');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        Storage::putFileAs('public/images/actors', $image, $imageName);
+
 
         // Insert data to $actor
         $actor->name = $request->name;

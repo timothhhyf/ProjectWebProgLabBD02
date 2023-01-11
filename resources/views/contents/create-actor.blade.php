@@ -8,8 +8,14 @@
         <div class="header-text-add-actor">
             <h3>Add Actor</h3>
         </div>
+        @if ($errors->any())
+            {{-- Error msg --}}
+            <div>
+                {{ $errors->first() }}
+            </div>
+        @endif
         <div class="add-actor-form">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/actor/create/addActor" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group add-actor">
                     <label for="inputActorName" class="col-sm-2 col-form-label">Name</label>
@@ -33,7 +39,7 @@
                 </div>
                 <div class="form-group add-actor">
                     <label for="inputActorPOB" class="col-sm-2 col-form-label">Place of birth</label>
-                    <input type="actorPOB" name="actor-POB" class="form-control add-actor" id="inputActorPOB" aria-describedby="actorPOBHelp">
+                    <input type="actorPOB" name="actorPOB" class="form-control add-actor" id="inputActorPOB" aria-describedby="actorPOBHelp">
                 </div>
                 <div class="form-group add-actor">
                     <label for="inputImageURL" class="col-sm-2 col-form-label">Image URL</label>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ActorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,7 @@ Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'
 Route::get('/profile', function(){ return view('contents.profile'); });
 Route::get('/movie/create', [MovieController::class, 'addMovieView'])->middleware('adminCheck');
 Route::get('/movie/edit/{id}', [MovieController::class, 'editMovieView'])->middleware('adminCheck');
-Route::get('/actor/create', function(){ return view('contents.create-actor'); });
+Route::get('/actor/create', function(){ return view('contents.create-actor'); })->middleware('adminCheck');
 Route::get('/actor/edit/{id}', function(){ return view('contents.edit-actor'); })->middleware('adminCheck');
+Route::get('/logout', [UserController::class, 'logout']);
 
