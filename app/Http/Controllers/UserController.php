@@ -135,6 +135,22 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function addToWatchlist(Request $request){
+        $movie = Movie::find($request->id);
+        $user = Auth::user();
+        $user->movies()->attach($movie, ['status' => 'Planning']);
+
+        return redirect()->back();
+    }
+
+    public function removeFromWatchlist(Request $request){
+        $movie = Movie::find($request->id);
+        $user = Auth::user();
+        $user->movies()->detach($movie);
+
+        return redirect()->back();
+    }
+
     public function getWatchlist(){
         $user = User::find(Auth::user()->id);
         $movies = $user->movies;

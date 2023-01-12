@@ -45,6 +45,8 @@ Route::post('/actor/create/addActor', [ActorController::class, 'addActor'])->mid
 Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'])->middleware('adminCheck');
 
 Route::get('/profile', function(){ return view('contents.profile'); });
+Route::get('/{id}/addToWatchlist', [UserController::class, 'addToWatchlist']);
+Route::get('/{id}/removeFromWatchlist', [UserController::class, 'removeFromWatchlist']);
 Route::get('/movie/create', [MovieController::class, 'addMovieView'])->middleware('adminCheck');
 Route::get('/movie/edit/{id}', [MovieController::class, 'editMovieView'])->middleware('adminCheck');
 Route::get('/actor/create', function(){ return view('contents.create-actor'); })->middleware('adminCheck');

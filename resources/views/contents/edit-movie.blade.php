@@ -69,42 +69,59 @@
                                 <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
                                 <a id="remove-btn"><i class="fa-solid fa-x"></i></a>
                             </div>
-                            <input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">
                         </div>
                     </div>
+                    <div id="ac-row">
+                        <div class="actors-character" id="#actors-character">
+                            <div class="actor-column">
+                                <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
+                                <input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select">
+                                <datalist name="actors-list" id="actor-select">
+                                    <option value="andrasda"></option>
+                                    <option value="andrew"></option>
+                                </datalist>
+                            </div>
+                            <div class="character-column">
+                                <div class="span-char">
+                                    <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
+                                    <a id="remove-btn"><i class="fa-solid fa-x"></i></a>
+                                </div>
+                                <input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-more-button">
+                        <a class="btn btn-info add-more" id="add-btn">Add more</a>
+                    </div>
                 </div>
-                <div class="add-more-button">
-                    <a class="btn btn-info add-more" id="add-btn">Add more</a>
+                <div class="form-group edit-movie">
+                    <label for="inputDirector" class="col-sm-2 col-form-label">Director</label>
+                    <input value="Old Director" type="director" class="form-control edit-movie" id="inputDirector" aria-describedby="directorHelp">
                 </div>
-            </div>
-            <div class="form-group edit-movie">
-                <label for="inputDirector" class="col-sm-2 col-form-label">Director</label>
-                <input value="Old Director" type="director" class="form-control edit-movie" id="inputDirector" aria-describedby="directorHelp">
-            </div>
-            <div class="form-group edit-movie">
-                <label for="inputReleaseDate" class="col-sm-2 col-form-label">Release Date</label>
-                <input type="date" class="form-control edit-movie" >
-            </div>
-            <div class="form-group edit-movie">
-                <label for="inputImageURL" class="col-sm-2 col-form-label">Image URL</label>
-                <input class="form-control edit-movie" type="file" id="formImageFile" name="movieImage">
-            </div>
-            <div class="form-group edit-movie">
-                <label for="inputBackgroundURL" class="col-sm-2 col-form-label">Background URL</label>
-                <input class="form-control edit-movie" type="file" id="formBackgroundFile" name="movieBackgroundImage">
-            </div>
-            <button type="submit" class="btn btn-danger edit-movie">Edit</button>
-        </form>
+                <div class="form-group edit-movie">
+                    <label for="inputReleaseDate" class="col-sm-2 col-form-label">Release Date</label>
+                    <input type="date" class="form-control edit-movie" >
+                </div>
+                <div class="form-group edit-movie">
+                    <label for="inputImageURL" class="col-sm-2 col-form-label">Image URL</label>
+                    <input class="form-control edit-movie" type="file" id="formImageFile" name="movieImage">
+                </div>
+                <div class="form-group edit-movie">
+                    <label for="inputBackgroundURL" class="col-sm-2 col-form-label">Background URL</label>
+                    <input class="form-control edit-movie" type="file" id="formBackgroundFile" name="movieBackgroundImage">
+                </div>
+                <button type="submit" class="btn btn-danger edit-movie">Edit</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<script>
-    $(document).ready(function(){
-        $('#my-select').select2({
-            multiple: true
+    <script>
+        $(document).ready(function(){
+            $('#my-select').select2({
+                multiple: true
+            });
         });
-    });
-</script>
+    </script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -133,10 +150,10 @@
         })
     });
 
-    $(document).on('click', '#remove-btn', function(){
-        $(this).closest('.actors-character').remove();
-    });
-</script>
+        $(document).on('click', '#remove-btn', function(){
+            $(this).closest('.actors-character').remove();
+        });
+    </script>
 
 @endsection
 
