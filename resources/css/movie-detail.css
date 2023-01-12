@@ -160,9 +160,25 @@
 }
 
 .movie-detail-title-and-year p{
-    padding: 2px 10px 2px 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0;
+}
+
+.movie-detail-year-and-icon{
+    padding: 0 10px 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-detail-year-and-icon i:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.fa-check{
+    color: red;
 }
