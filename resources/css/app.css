@@ -6,6 +6,7 @@
 @import "profile.css";
 @import "modal.css";
 @import "edit-create-actor.css";
+@import "movie-detail.css";
 
 body{
     background-color: black;

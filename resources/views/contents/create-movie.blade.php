@@ -3,8 +3,10 @@
 @section('title', 'Create Movie')
 
 @section('content')
-    {{-- Create Movie Page HTML --}}
 
+    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
+
+    {{-- Create Movie Page HTML --}}
     <div class="create-movie-content">
         <div class="header-text-create">
             <h3>Add Movie</h3>
