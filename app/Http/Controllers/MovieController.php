@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Movie;
 use App\Models\Genre;
 use App\Models\Actor;
@@ -99,8 +100,6 @@ class MovieController extends Controller
         $backgroundName = time() . '.' . $background->getClientOriginalExtension();
         // Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
 
-
-
         // Insert data to $movie
         $movie->title = $request->title;
         $movie->description = $request->description;
@@ -124,13 +123,21 @@ class MovieController extends Controller
         }
         $movie->actors()->sync($newRoles);
 
-        return redirect("/");
+        return redirect()->back()->back();
    }
 
    public function movieDetail(Request $request){
         // Search movie based on id
         $movie = Movie::find($request->id);
-        return view('', ['movie' => $movie]);
+        $user = Auth::user();
+        $randomMovies = Movie::all()->shuffle()->take(8);
+        $watchlist = [];
+        foreach($randomMovies as $i => $rm){
+            $status = ($user->movies()->where('movie_id', $rm->id)->exists()) ? true : false;
+            $watchlist[$i] = [$rm->id => $status];
+        }
+
+        return view('contents.movie-detail', ['movie' => $movie, 'randomMovies' => $randomMovies, 'status' => $watchlist]);
    }
 
    public function deleteMovie(Request $request){
