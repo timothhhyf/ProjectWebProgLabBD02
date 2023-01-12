@@ -46,3 +46,9 @@
     display: grid;
     grid-auto-columns: 120px;
 }
+
+.actors-list-image-info{
+    margin: 0 85px 0 85px;
+    display: grid;
+    grid-auto-columns: 120px;
+}

@@ -8,6 +8,7 @@
 @import "edit-create-actor.css";
 @import "movie-detail.css";
 @import "actors-list.css";
+@import "home.css";
 
 body{
     background-color: black;
@@ -16,3 +17,20 @@ body{
     flex-direction: column;
     min-height: 100vh;
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: black;
+}
+
+::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(195, 195, 195);
+  }

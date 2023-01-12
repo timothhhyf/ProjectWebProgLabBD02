@@ -152,6 +152,8 @@
 }
 
 .movie-detail-more img{
+    width: 150px;
+    height: 200px;
     border-radius: 0;
     object-fit: cover;
 }
