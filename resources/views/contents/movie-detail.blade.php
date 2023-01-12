@@ -47,7 +47,31 @@
             </div>
         </div>
     </div>
-        <div>ASD</div>
+    <div class="movie-detail-cast-and-more">
+        <h4>Cast</h4>
+        <div class="movie-detail-cast-list">
+            {{--udah gua css jd kalo forloop bagus aman--}}
+            <div class="movie-detail-img-and-info">
+                <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
+                <div class="movie-detail-name-and-cast">
+                    <p style="font-size:small; font-weight:bold; ">Keanu Reeves</p>
+                    <p style="font-size:x-small; font-weight:normal;">Thomas A. Anderson/Neo</p>
+                </div>
+            </div>
+        </div>
+        <h4>More</h4>
+        <div class="movie-detail-more-list">
+            {{-- ini loop 8x aja wil biar pas, soalnya gua ga bikin justify content nya space between --}}
+            <div class="movie-detail-more">
+                <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
+                <div class="movie-detail-title-and-year">
+                    <p style="font-size:small; font-weight:bold; color: white;">The Kungfu Panda 10 blabla 11</p>
+                    <p style="font-size:x-small; font-weight:normal; color:rgb(155, 155, 155);">2021</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
