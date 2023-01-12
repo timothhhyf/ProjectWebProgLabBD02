@@ -20,8 +20,8 @@
                     <div class="movie-detail-title">
                         <h1>The Matrix Ressurections</h1>
                         <div>
-                            <a><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a><i class="fa-regular fa-trash-can"></i></a>
+                            <a href=""><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a href=""><i class="fa-regular fa-trash-can"></i></a>
                         </div>
                     </div>
                     <div class="movie-detail-genre">
@@ -63,10 +63,10 @@
         <div class="movie-detail-more-list">
             {{-- ini loop 8x aja wil biar pas, soalnya gua ga bikin justify content nya space between --}}
             <div class="movie-detail-more">
-                <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
+                <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
                 <div class="movie-detail-title-and-year">
-                    <p style="font-size:small; font-weight:bold; color: white;">The Kungfu Panda 10 blabla 11</p>
-                    <p style="font-size:x-small; font-weight:normal; color:rgb(155, 155, 155);">2021</p>
+                    <p style="font-size:small; font-weight:bold;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
+                    <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
                 </div>
             </div>
         </div>
