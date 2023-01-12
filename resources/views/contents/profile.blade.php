@@ -35,7 +35,7 @@
 
         <div class="update-profile">
             <h1 id="update-profile">Update Profile</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="/profile/saveChanges" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <div class="input-group mb-3">
@@ -54,6 +54,12 @@
                         <span class="input-group-text">Phone</span>
                         <input name="phone" type="phone" class="form-control" value="Old Phone"  autocomplete="Phone">
                     </div>
+                    @if ($errors->any())
+                        {{-- Error msg --}}
+                        <div>
+                            {{ $errors->first() }}
+                        </div>
+                    @endif
                     <button class="btn btn-danger save-changes">Save Changes</button>
                 </div>
             </form>
