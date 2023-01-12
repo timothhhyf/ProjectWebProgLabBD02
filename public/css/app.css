@@ -870,7 +870,9 @@ font-size: medium;
 .background-image{
     display: block;
     width: 100%;
-    max-height: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .background-overlay-gradient{
@@ -896,8 +898,8 @@ font-size: medium;
 }
 
 .poster-image{
-    width: 280px;
-    height: 400px;
+    max-width: 100%;
+    height: 100%;
     border-radius: 10px;
 }
 
@@ -982,7 +984,7 @@ font-size: medium;
 .movie-detail-cast-and-more img{
     width: 150px;
     height: 200px;
-    border-radius: 5px 5px ;
+    border-radius: 5px 5px;
 }
 
 .movie-detail-name-and-cast{
@@ -1012,6 +1014,8 @@ font-size: medium;
 
 .movie-detail-more img{
     border-radius: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .movie-detail-title-and-year{
@@ -1041,6 +1045,64 @@ font-size: medium;
 
 .fa-check{
     color: red;
+}
+
+.actors-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 85px 20px 85px;
+    height: 45px;
+}
+
+.actors-header h3{
+    color: #d23f48;
+    font-weight: bold;
+    margin: 0;
+}
+
+.d-flex{
+    width: 300px;
+}
+
+.form-control.me-sm-2{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+    height: 35px;
+    margin-right: 12px !important;
+}
+
+.form-control.me-sm-2::-moz-placeholder{
+    padding-left: 0;
+    color: #565656;
+}
+
+.form-control.me-sm-2::placeholder{
+    padding-left: 0;
+    color: #565656;
+}
+
+.form-control.me-sm-2:focus::-moz-placeholder{
+    color: transparent;
+}
+
+.form-control.me-sm-2:focus::placeholder{
+    color: transparent;
+}
+
+.btn.btn-secondary.my-2.my-sm-0{
+    width: 120px;
+    background-color: #dd3444;
+    font-size: small;
+    height: 35px;
+}
+
+.actors-list{
+    margin: 0 85px 0 85px;
+    display: grid;
+    grid-auto-columns: 120px;
 }
 
 body{

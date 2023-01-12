@@ -7,6 +7,7 @@
 @import "modal.css";
 @import "edit-create-actor.css";
 @import "movie-detail.css";
+@import "actors-list.css";
 
 body{
     background-color: black;

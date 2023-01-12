@@ -33,6 +33,7 @@ Route::view('/profile', 'contents.profile');
 Route::view('/create-actor', 'contents.create-actor');
 Route::view('/edit-actor', 'contents.edit-actor');
 Route::view('/movie-detail', 'contents.movie-detail');
+Route::view('/actors-list', 'contents.actor');
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);

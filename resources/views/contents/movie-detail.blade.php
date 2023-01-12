@@ -31,12 +31,12 @@
                     <div class="movie-detail-release-date">
                         <i class="fa-regular fa-calendar-days" style="font-size: xx-large; color:#0b6efe;"></i>
                         <p style="font-family: 'Quicksand', sans-serif; font-size:xx-small; margin:0; padding: 3px 0 3px 0">Release Year</p>
-                        <p style="font-family: 'Roboto', sans-serif; font-weight:bold; font-size:smaller;">2021</p>
+                        <p style="font-family: 'Roboto', sans-serif; font-weight:bold; font-size:smaller; margin:0">2021</p>
                     </div>
                     <div class="movie-detail-story-line-director">
                         <div class="movie-detail-story-line">
                             <h5>Storyline</h5>
-                            <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
+                            <p style="font-size:small; text-align:justify;">aaaaaaaaaa aaaaaaaaa aaaaaa aa aaaa aaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaa aaaaaaa aaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
                         </div>
                         <div class="movie-detail-story-director">
                             <h5>Lana Wachowsk</h5>

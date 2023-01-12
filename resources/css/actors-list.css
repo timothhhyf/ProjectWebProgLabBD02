@@ -1,0 +1,48 @@
+.actors-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 85px 20px 85px;
+    height: 45px;
+}
+
+.actors-header h3{
+    color: #d23f48;
+    font-weight: bold;
+    margin: 0;
+}
+
+.d-flex{
+    width: 300px;
+}
+
+.form-control.me-sm-2{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+    height: 35px;
+    margin-right: 12px !important;
+}
+
+.form-control.me-sm-2::placeholder{
+    padding-left: 0;
+    color: #565656;
+}
+
+.form-control.me-sm-2:focus::placeholder{
+    color: transparent;
+}
+
+.btn.btn-secondary.my-2.my-sm-0{
+    width: 120px;
+    background-color: #dd3444;
+    font-size: small;
+    height: 35px;
+}
+
+.actors-list{
+    margin: 0 85px 0 85px;
+    display: grid;
+    grid-auto-columns: 120px;
+}
