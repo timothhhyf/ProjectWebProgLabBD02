@@ -36,7 +36,7 @@
                 @auth
                     @if (Auth::user()->role != 'admin')
                         <li class="nav-item">
-                            <a class="nav-link" href="#">My Watchlist</a>
+                            <a class="nav-link" href="/watchlist">My Watchlist</a>
                         </li>
                     @endif
                 </ul>

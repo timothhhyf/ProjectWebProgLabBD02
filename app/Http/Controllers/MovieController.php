@@ -149,10 +149,15 @@ class MovieController extends Controller
         // $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id')->orderBy('total_added', 'desc')->get();
         $allMovies = Movie::all();
         $genres = Genre::all();
-        $watchlist = [];
-        foreach($allMovies as $i => $am){
-            $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
-            $watchlist[$i] = [$am->id => $status];
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($allMovies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
         }
         return view('contents.home', ['heroMovies' => $heroMovies, 'allMovies' => $allMovies, 'genres' => $genres, 'status' => $watchlist]);
    }

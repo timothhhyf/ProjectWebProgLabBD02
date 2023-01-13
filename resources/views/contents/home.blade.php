@@ -27,7 +27,9 @@
                             </div>
                             {{-- <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p> --}}
                             <p style="font-size:small; text-align:justify;">{{ $hm->description }}</p>
-                            <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
+                            @if (Auth::check())
+                                <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
+                            @endif
                         </div>
                     </div>
                 </li>
@@ -263,11 +265,12 @@
                     <p style="font-size:small; font-weight:bold; padding: 2px 0 2px 0;"><a href="" style="text-decoration: none; color: white;">{{ $am->title }}</a></p>
                     <div class="movie-detail-year-and-icon home-movie-detail-year-and-icon">
                         <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($am->release_date)) }}</a></p>
-                        {{-- <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a> --}}
-                        @if ($status[$i][$am->id] == true)
-                            <a href="/{{ $am->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
-                        @else
-                            <a href="/{{ $am->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                        @if (Auth::check())
+                            @if ($status[$i][$am->id] == true)
+                                <a href="/{{ $am->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
+                            @else
+                                <a href="/{{ $am->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                            @endif
                         @endif
                     </div>
                 </div>

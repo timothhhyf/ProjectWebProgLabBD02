@@ -34,12 +34,14 @@
             <h6>Action</h6>
         </div>
         {{-- loop disini --}}
-        <div class="real-watchlist-grid-content">
-            <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
-            <h6>Title</h6>
-            <h6>Status</h6>
-            <i class="fa-solid fa-ellipsis" data-toggle="modal" data-target="#actionModal"></i>
-        </div>
+        @foreach ($movies as $m)
+            <div class="real-watchlist-grid-content">
+                <img src="{{ Storage::url('images/movies/thumbnail/'. $m->image); }}" alt="">
+                <h6>{{ $m->title }}</h6>
+                <h6>{{ $m->users()->first()->pivot->status }}</h6>
+                <i class="fa-solid fa-ellipsis" data-toggle="modal" data-target="#actionModal" data-id="{{ $m->id }}"></i>
+            </div>
+        @endforeach
 
         <div class="amount-and-paginate">
             <div class="show-amount">
@@ -70,9 +72,5 @@
     </div>
 
     @include('modal.action')
-    {{-- @foreach ($movies as $m)
-        {{ Storage::url('images/movies/thumbnail/'.$m->image) }}
-        {{ $m->title }}
-        {{ $m->pivot->status }}
-    @endforeach --}}
+
 @endsection

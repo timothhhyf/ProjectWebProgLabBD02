@@ -154,13 +154,13 @@ class UserController extends Controller
 
     public function getWatchlist(){
         $user = User::find(Auth::user()->id);
-        $movies = $user->movies;
+        $movies = $user->movies()->get();
         return view('contents.watchlist', ['movies' => $movies]);
     }
 
     public function updateStatus(Request $request){
         $movie = Movie::find($request->id);
-        $status = $request->status;
+        $status = $request->input('status');
         $user = User::find(Auth::user()->id);
         $user->movies()->updateExistingPivot($movie, ['status' => $status]);
         return redirect()->back();
