@@ -12,22 +12,22 @@
             <h3>Add Movie</h3>
         </div>
         <div class="create-movie-form">
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/movie/create/addMovie" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group create-movie">
                     <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
-                    <input type="title" name="movie-title" class="form-control create-movie" id="inputTitle" aria-describedby="titleHelp">
+                    <input type="title" name="title" class="form-control create-movie" id="inputTitle" aria-describedby="titleHelp">
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
-                    <textarea name="movie-description" class="form-control create-movie" id="descTextArea" rows="6"></textarea>
+                    <textarea name="description" class="form-control create-movie" id="descTextArea" rows="6"></textarea>
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputGenre" class="col-sm-2 col-form-label">Genre</label>
-                    <select class="form-select create-movie" id="my-select" name="my-select[]" multiple>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                    <select class="form-select create-movie" id="genre-select" name="genre[]" multiple>
+                        @foreach ($genres as $g)
+                            <option value="{{ $g->id }}">{{ $g->name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group create-movie">
@@ -36,15 +36,19 @@
                         <div class="actors-character" id="#actors-character">
                             <div class="actor-column">
                                 <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
-                                <input class="form-control create-movie" type="text" name="movie-actors" minlength="3" list="actor-select" placeholder="--Open this select menu--">
-                                <datalist name="actors-list" id="actor-select">
+                                <select class="form-control create-movie" type="text" id="actor-select" name="actor[]" minlength="3" placeholder="--Open this select menu--">
+                                @foreach ($actors as $a)
+                                    <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                @endforeach
+                                </select>
+                                {{-- <datalist name="actors-list" id="actor-select">
                                     <option value="andrasda"></option>
                                     <option value="andrew"></option>
-                                </datalist>
+                                </datalist> --}}
                             </div>
                             <div class="character-column">
                                 <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
-                                <input type="character" name="actors-character" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">
+                                <input type="character" name="charName[]" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">
                             </div>
                         </div>
                     </div>
@@ -52,18 +56,21 @@
                         <div class="actors-character" id="#actors-character">
                             <div class="actor-column">
                                 <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
-                                <input class="form-control create-movie" type="text" name="movie-actors" minlength="3" list="actor-select" placeholder="--Open this select menu--">
-                                <datalist name="actors-list" id="actor-select">
-                                    <option value="andrasda"></option>
-                                    <option value="andrew"></option>
-                                </datalist>
+                                <select class="form-control create-movie" type="text" name="actor[]" minlength="3" list="actor-select" id="actor-select" placeholder="--Open this select menu--">
+                                {{-- <select name="actors-list" id="actor-select"> --}}
+                                    @foreach ($actors as $a)
+                                        <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                    @endforeach
+                                    {{-- <option value="andrasda"></option>
+                                    <option value="andrew"></option> --}}
+                                </select>
                             </div>
                             <div class="character-column">
                                 <div class="span-char">
                                     <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
                                     <a id="remove-btn"><i class="fa-solid fa-x"></i></a>
                                 </div>
-                                <input type="character" name="actors-character" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">
+                                <input type="character" name="charName[]" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">
                             </div>
                         </div>
                     </div>
@@ -73,11 +80,11 @@
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputDirector" class="col-sm-2 col-form-label">Director</label>
-                    <input type="director" class="form-control create-movie" id="inputDirector" aria-describedby="directorHelp">
+                    <input type="director" name="director" class="form-control create-movie" id="inputDirector" aria-describedby="directorHelp">
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputReleaseDate" class="col-sm-2 col-form-label">Release Date</label>
-                    <input type="date" class="form-control create-movie" >
+                    <input type="date" name="releaseDate" class="form-control create-movie" >
                 </div>
                 <div class="form-group create-movie">
                     <label for="inputImageURL" class="col-sm-2 col-form-label">Image URL</label>
@@ -94,8 +101,13 @@
 
     <script>
         $(document).ready(function(){
-            $('#my-select').select2({
+            $('#genre-select').select2({
                 multiple: true
+            });
+            $('#actor-select').select2({
+                placeholder: "--Open this select menu--",
+                allowClear: true,
+                multiple: false
             });
         });
     </script>
@@ -107,10 +119,13 @@
                 html+='<div class="actors-character" id="#actors-character">'
                 html+='<div class="actor-column">'
                 html+='<label for="inputActor" class="col-sm-2 col-form-label">Actor</label>'
-                html+='<input class="form-control create-movie" type="text" name="movie-actors" minlength="3" list="actor-select" placeholder="--Open this select menu--">'
+                html+='<input class="form-control create-movie" type="text" name="actor[]" minlength="3" list="actor-select" placeholder="--Open this select menu--">'
                 html+='<datalist name="actors-list" id="actor-select">'
-                html+='<option value="andrasda"></option>'
-                html+='<option value="andrew"></option>'
+                html+= '@foreach ($actors as $a)'
+                html+= '<option value="{{ $a->id }}">{{ $a->name }}</option>'
+                html+= '@endforeach'
+                // html+='<option value="andrasda"></option>'
+                // html+='<option value="andrew"></option>'
                 html+='</datalist>'
                 html+='</div>'
                 html+='<div class="character-column">'
@@ -118,7 +133,7 @@
                 html+='<label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>'
                 html+='<a id="remove-btn"><i class="fa-solid fa-x"></i></a>'
                 html+='</div>';
-                html+='<input type="character" name="actors-character" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">'
+                html+='<input type="character" name="charName[]" class="form-control create-movie" id="inputCharacter" aria-describedby="characterHelp">'
                 html+='</div></div>';
                 $('#ac-row').append(html);
             })

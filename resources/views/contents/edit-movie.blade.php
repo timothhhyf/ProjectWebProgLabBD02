@@ -4,46 +4,70 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="//db.onlinewebfonts.com/c/b30ffe63cc57ffdba315d296d0ca85b0?family=NTF-Grand-Regular" type="text/css"/>
-
-    <div class="edit-movie-content">
-        <div class="header-text-edit">
-            <h3>Edit Movie</h3>
-        </div>
-        <div class="edit-movie-form">
-            <form action="" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <div class="form-group edit-movie">
-                    <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
-                    <input value="Old Title" type="title" name="movie-title" class="form-control edit-movie" id="inputTitle" aria-describedby="titleHelp">
+<div class="edit-movie-content">
+    <div class="header-text-edit">
+        <h3>Edit Movie</h3>
+    </div>
+    <div class="edit-movie-form">
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="form-group edit-movie">
+                <label for="inputTitle" class="col-sm-2 col-form-label">Title</label>
+                <input value="Old Title" type="title" name="movie-title" class="form-control edit-movie" id="inputTitle" aria-describedby="titleHelp">
+            </div>
+            <div class="form-group edit-movie">
+                <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
+                <textarea name="movie-description" class="form-control edit-movie" id="descTextArea" rows="6">{{--oldvalue--}}</textarea>
+            </div>
+            <div class="form-group edit-movie">
+                <label for="inputGenre" class="col-sm-2 col-form-label">Genre</label>
+                <select class="form-select edit-movie" id="my-select" name="my-select[]" multiple>
+                    {{-- <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option> --}}
+                    @foreach ($genres as $g)
+                        <option value="{{ $g->id }}">{{ $g->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group edit-movie">
+                <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
+                <div id="ac-row">
+                    <div class="actors-character" id="#actors-character">
+                        <div class="actor-column">
+                            <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
+                            <input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select">
+                            <datalist name="actors-list" id="actor-select">
+                                {{-- <option value="andrasda"></option>
+                                <option value="andrew"></option> --}}
+                                @foreach ($actors as $a)
+                                    <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                @endforeach
+                            </datalist>
+                        </div>
+                        <div class="character-column">
+                            <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
+                            <input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group edit-movie">
-                    <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
-                    <textarea name="movie-description" class="form-control edit-movie" id="descTextArea" rows="6">{{--oldvalue--}}</textarea>
-                </div>
-                <div class="form-group edit-movie">
-                    <label for="inputGenre" class="col-sm-2 col-form-label">Genre</label>
-                    <select class="form-select edit-movie" id="my-select" name="my-select[]" multiple>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
-                    </select>
-                </div>
-                <div class="form-group edit-movie">
-                    <label for="inputActors" class="col-sm-2 col-form-label">Actors</label>
-                    <div id="ac-row">
-                        <div class="actors-character" id="#actors-character">
-                            <div class="actor-column">
-                                <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
-                                <input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select">
-                                <datalist name="actors-list" id="actor-select">
-                                    <option value="andrasda"></option>
-                                    <option value="andrew"></option>
-                                </datalist>
-                            </div>
-                            <div class="character-column">
+                <div id="ac-row">
+                    <div class="actors-character" id="#actors-character">
+                        <div class="actor-column">
+                            <label for="inputActor" class="col-sm-2 col-form-label">Actor</label>
+                            <input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select">
+                            <datalist name="actors-list" id="actor-select">
+                                {{-- <option value="andrasda"></option>
+                                <option value="andrew"></option> --}}
+                                @foreach ($actors as $a)
+                                    <option value="{{ $a->id }}">{{ $a->name }}</option>
+                                @endforeach
+                            </datalist>
+                        </div>
+                        <div class="character-column">
+                            <div class="span-char">
                                 <label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>
-                                <input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">
+                                <a id="remove-btn"><i class="fa-solid fa-x"></i></a>
                             </div>
                         </div>
                     </div>
@@ -99,29 +123,32 @@
         });
     </script>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#add-btn').on('click', function(){
-                var html='';
-                html+='<div class="actors-character" id="#actors-character">'
-                html+='<div class="actor-column">'
-                html+='<label for="inputActor" class="col-sm-2 col-form-label">Actor</label>'
-                html+='<input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select" placeholder="--Open this select menu--">'
-                html+='<datalist name="actors-list" id="actor-select">'
-                html+='<option value="andrasda"></option>'
-                html+='<option value="andrew"></option>'
-                html+='</datalist>'
-                html+='</div>'
-                html+='<div class="character-column">'
-                html+='<div class="span-char">'
-                html+='<label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>'
-                html+='<a id="remove-btn"><i class="fa-solid fa-x"></i></a>'
-                html+='</div>';
-                html+='<input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">'
-                html+='</div></div>';
-                $('#ac-row').append(html);
-            })
-        });
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#add-btn').on('click', function(){
+            var html='';
+            html+='<div class="actors-character" id="#actors-character">'
+            html+='<div class="actor-column">'
+            html+='<label for="inputActor" class="col-sm-2 col-form-label">Actor</label>'
+            html+='<input value="Old Actor" class="form-control edit-movie" type="text" name="movie-actors" minlength="3" list="actor-select" placeholder="--Open this select menu--">'
+            html+='<datalist name="actors-list" id="actor-select">'
+            html+= '@foreach ($actors as $a)'
+            html+= '<option value="{{ $a->id }}">{{ $a->name }}</option>'
+            html+= '@endforeach'
+            // html+='<option value="andrasda"></option>'
+            // html+='<option value="andrew"></option>'
+            html+='</datalist>'
+            html+='</div>'
+            html+='<div class="character-column">'
+            html+='<div class="span-char">'
+            html+='<label for="inputCharacter" class="col-sm-2 col-form-label" style="width: 120px">Character Name</label>'
+            html+='<a id="remove-btn"><i class="fa-solid fa-x"></i></a>'
+            html+='</div>';
+            html+='<input value="Old Character" type="character" name="actors-character" class="form-control edit-movie" id="inputCharacter" aria-describedby="characterHelp">'
+            html+='</div></div>';
+            $('#ac-row').append(html);
+        })
+    });
 
         $(document).on('click', '#remove-btn', function(){
             $(this).closest('.actors-character').remove();

@@ -62,7 +62,6 @@ class UserController extends Controller
         $validation = [
             // Rules
             'username' => 'required | min:5 | unique:users,name',
-            // email validation still needs work
             'email' => 'required | email | unique:users,email',
             'password' => 'required | alpha_num | confirmed'
         ];
@@ -134,6 +133,22 @@ class UserController extends Controller
     public function logout(){
         Auth::logout();
         return redirect('/');
+    }
+
+    public function addToWatchlist(Request $request){
+        $movie = Movie::find($request->id);
+        $user = Auth::user();
+        $user->movies()->attach($movie, ['status' => 'Planning']);
+
+        return redirect()->back();
+    }
+
+    public function removeFromWatchlist(Request $request){
+        $movie = Movie::find($request->id);
+        $user = Auth::user();
+        $user->movies()->detach($movie);
+
+        return redirect()->back();
     }
 
     public function getWatchlist(){

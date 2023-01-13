@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ActorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +40,18 @@ Route::view('/actor-detail', 'contents.actor-detail');
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
+Route::post('/profile/saveChanges', [UserController::class, 'updateProfile']);
+Route::post('/movie/create/addMovie', [MovieController::class, 'addMovie'])->middleware('adminCheck');
+Route::post('/movie/edit/{id}/editMovie', [MovieController::class, 'editMovie'])->middleware('adminCheck');
+Route::post('/actor/create/addActor', [ActorController::class, 'addActor'])->middleware('adminCheck');
+Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'])->middleware('adminCheck');
 
-Route::get('/movie/create', function(){
-    return view('contents.create-movie');
-});
+Route::get('/profile', function(){ return view('contents.profile'); });
+Route::get('/{id}/addToWatchlist', [UserController::class, 'addToWatchlist']);
+Route::get('/{id}/removeFromWatchlist', [UserController::class, 'removeFromWatchlist']);
+Route::get('/movie/create', [MovieController::class, 'addMovieView'])->middleware('adminCheck');
+Route::get('/movie/edit/{id}', [MovieController::class, 'editMovieView'])->middleware('adminCheck');
+Route::get('/actor/create', function(){ return view('contents.create-actor'); })->middleware('adminCheck');
+Route::get('/actor/edit/{id}', function(){ return view('contents.edit-actor'); })->middleware('adminCheck');
+Route::get('/logout', [UserController::class, 'logout']);
+
