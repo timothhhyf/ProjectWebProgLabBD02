@@ -42,11 +42,12 @@ Route::post('/profile/saveChanges', [UserController::class, 'updateProfile']);
 Route::post('/watchlist/{id}/changeStatus', [UserController::class, 'updateStatus']);
 Route::post('/movie/create/addMovie', [MovieController::class, 'addMovie'])->middleware('adminCheck');
 Route::post('/movie/edit/{id}/editMovie', [MovieController::class, 'editMovie'])->middleware('adminCheck');
-Route::post('/movie/delete/{id}', [MovieController::class, 'deleteMovie'])->middleware('adminCheck');
 Route::post('/actor/create/addActor', [ActorController::class, 'addActor'])->middleware('adminCheck');
 Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'])->middleware('adminCheck');
-Route::get('/actor/{id}/delete', [ActorController::class, 'deleteActor'])->middleware('adminCheck');
 
+
+Route::get('/actor/{id}/delete', [ActorController::class, 'deleteActor'])->middleware('adminCheck');
+Route::get('/movie/delete/{id}', [MovieController::class, 'deleteMovie'])->middleware('adminCheck');
 Route::get('/', [MovieController::class, 'homePage']);
 Route::get('/watchlist', [UserController::class, 'getWatchlist']);
 Route::get('/profile', function(){ return view('contents.profile'); });

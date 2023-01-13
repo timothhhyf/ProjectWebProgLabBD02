@@ -28,7 +28,7 @@
                     </div>
                     <div class="movie-detail-genre">
                         @foreach ($movie->genres as $g)
-                            <p class="move-detail-genre-list">{{ $g->name }}</p>
+                            <p class="movie-detail-genre-list">{{ $g->name }}</p>
                         @endforeach
                     </div>
                     <div class="movie-detail-release-date">
