@@ -20,6 +20,7 @@
                             <p class="movie-detail-genre-list">Science Fiction</p>
                         </div>
                         <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
+                        <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
                     </div>
                 </div>
             </li>
@@ -37,6 +38,7 @@
                             <p class="movie-detail-genre-list">Science Fiction</p>
                         </div>
                         <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
+                        <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
                     </div>
                 </div>
             </li>
@@ -54,6 +56,7 @@
                             <p class="movie-detail-genre-list">Science Fiction</p>
                         </div>
                         <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
+                        <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
                     </div>
                 </div>
             </li>
@@ -69,9 +72,9 @@
               <i class="fas fa-angle-double-left"></i>
             </button>
             <div class="scroll-images">
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -79,9 +82,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -89,9 +92,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -99,9 +102,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -109,9 +112,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -119,9 +122,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -129,9 +132,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -139,9 +142,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -149,9 +152,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -159,9 +162,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -169,9 +172,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -179,9 +182,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -189,9 +192,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -199,9 +202,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -209,9 +212,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -219,9 +222,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -229,19 +232,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="movie-detail-more">
+                <div class="movie-detail-more.home-popular-list">
                     <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year">
+                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
@@ -254,13 +247,57 @@
               <i class="fas fa-angle-double-right"></i>
             </button>
         </div>
-        <div class="show-and-search-bar">
-            <h4 class="show-title"><i class="fa-solid fa-film" style="margin-right: 12px;"></i>Show</h4>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" style="margin-right: 0 !important;" type="search" placeholder="Search movie..">
-            </form>
-        </div>
+    </div>
 
+    <div class="show-and-search-bar">
+        <h4 class="show-title"><i class="fa-solid fa-film" style="margin-right: 12px;"></i>Show</h4>
+        <form class="d-flex">
+            <input class="form-control me-sm-2" style="margin-right: 0 !important;" type="search" placeholder="Search movie..">
+        </form>
+    </div>
+    <div class="home-genre-selection">
+        <div class="cover">
+            <button class="left" onclick="leftScrollGenres()">
+                <i class="fas fa-angle-double-left"></i>
+            </button>
+            <div class="scroll-genres">
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+                <a href=""><p>Crime</p></a>
+            </div>
+            <button class="right" onclick="rightScrollGenres()">
+                <i class="fas fa-angle-double-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="home-movie-sorter">
+        <div class="home-movie-sort-by">
+            <h1 style="font-size: small;">Sort By:</h1>
+            <a href="">Latest</a>
+            <a href="">A-Z</a>
+            <a href="">Z-A</a>
+        </div>
+        <div class="add-more-movie-admin">
+            <a href=""><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add Movie</a>
+        </div>
+    </div>
+    <div class="home-movie-list">
+        {{--for loop dari sini--}}
+        <div class="movie-detail-more">
+            <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
+            <div class="movie-detail-title-and-year home-movie-detail-title-and-year">
+                <p style="font-size:small; font-weight:bold; padding: 2px 0 2px 0;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
+                <div class="movie-detail-year-and-icon home-movie-detail-year-and-icon">
+                    <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
+                    <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -333,12 +370,22 @@
 
         function leftScroll() {
             const left = document.querySelector(".scroll-images");
-            left.scrollBy(-1510, 0);
+            left.scrollBy(-1505, 0);
         }
 
         function rightScroll() {
             const right = document.querySelector(".scroll-images");
-            right.scrollBy(1510, 0);
+            right.scrollBy(1505, 0);
+        }
+
+        function leftScrollGenres() {
+            const left = document.querySelector(".scroll-genres");
+            left.scrollBy(-1505, 0);
+        }
+
+        function rightScrollGenres() {
+            const right = document.querySelector(".scroll-genres");
+            right.scrollBy(1505, 0);
         }
     </script>
 
