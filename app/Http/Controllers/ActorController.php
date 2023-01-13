@@ -130,6 +130,6 @@ class ActorController extends Controller
     public function deleteActor(Request $request){
         $actor = Actor::find($request->id);
         $actor->delete();
-        return redirect()->back();
+        return redirect('/actor');
     }
 }

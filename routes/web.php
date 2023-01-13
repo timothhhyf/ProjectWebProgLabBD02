@@ -26,15 +26,15 @@ Route::get('/register', function(){
 });
 
 // return view buat test
-Route::view('/edit-movie', 'contents.edit-movie');
-Route::view('/create-movie', 'contents.create-movie');
-Route::view('/profile', 'contents.profile');
-Route::view('/create-actor', 'contents.create-actor');
-Route::view('/edit-actor', 'contents.edit-actor');
-Route::view('/movie-detail', 'contents.movie-detail');
-Route::view('/actors-list', 'contents.actor');
-Route::view('/actor-detail', 'contents.actor-detail');
-Route::view('/watchlist', 'contents.watchlist');
+// Route::view('/edit-movie', 'contents.edit-movie');
+// Route::view('/create-movie', 'contents.create-movie');
+// Route::view('/profile', 'contents.profile');
+// Route::view('/create-actor', 'contents.create-actor');
+// Route::view('/edit-actor', 'contents.edit-actor');
+// Route::view('/movie-detail', 'contents.movie-detail');
+// Route::view('/actors-list', 'contents.actor');
+// Route::view('/actor-detail', 'contents.actor-detail');
+// Route::view('/watchlist', 'contents.watchlist');
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
@@ -45,6 +45,7 @@ Route::post('/movie/edit/{id}/editMovie', [MovieController::class, 'editMovie'])
 Route::post('/movie/delete/{id}', [MovieController::class, 'deleteMovie'])->middleware('adminCheck');
 Route::post('/actor/create/addActor', [ActorController::class, 'addActor'])->middleware('adminCheck');
 Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'])->middleware('adminCheck');
+Route::get('/actor/{id}/delete', [ActorController::class, 'deleteActor'])->middleware('adminCheck');
 
 Route::get('/', [MovieController::class, 'homePage']);
 Route::get('/watchlist', [UserController::class, 'getWatchlist']);

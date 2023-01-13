@@ -11,7 +11,13 @@
 
     <div class="actor-detail-page">
         <div class="actor-detail-img-and-personal-info">
-            <img src="{{ Storage::url('images/actors/'. $actor->image); }}" alt="">
+            <div style="position: relative">
+                <img src="{{ Storage::url('images/actors/'. $actor->image); }}" alt="">
+                <span style="position: absolute; top: 0; right:0;">
+                    <a href="/actor/edit/{{$actor->id}}">Edit</a>
+                    <a href="/actor/{{$actor->id}}/delete">Remove</a>
+                </span>
+            </div>
             <div class="personal-info">
                 <h4>Personal Info</h4>
                 <h6>Popularity</h6>
