@@ -40,7 +40,7 @@
                         <div class="movie-detail-story-line">
                             <h5>Storyline</h5>
                             {{-- <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p> --}}
-
+                            <p style="font-size:small; text-align:justify;">{{ $movie->description }}</p>
                         </div>
                         <div class="movie-detail-story-director">
                             <h5>{{ $movie->director }}</h5>
@@ -72,15 +72,15 @@
             {{-- ini loop 8x aja wil biar pas, soalnya gua ga bikin justify content nya space between --}}
             @foreach ($randomMovies as $i => $rm)
                 <div class="movie-detail-more">
-                    <a href="/movie/{{ $rm->id }}"><img src="{{ Storage::url('images/movies/thumbnail/'. $movie->image); }}" alt=""></a>
+                    <a href="/movie/detail/{{ $rm->id }}"><img src="{{ Storage::url('images/movies/thumbnail/'. $rm->image); }}" alt=""></a>
                     <div class="movie-detail-title-and-year">
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">{{ $rm->title }}</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($rm->release_date)) }}</a></p>
                             @if ($status[$i][$rm->id] == true)
-                                <a href="/{{ $rm->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn" onclick="myFunction();"></i></a>
+                                <a href="/{{ $rm->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
                             @else
-                                <a href="/{{ $rm->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn" onclick="myFunction();"></i></a>
+                                <a href="/{{ $rm->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
                             @endif
                         </div>
                     </div>
@@ -88,17 +88,4 @@
             @endforeach
         </div>
     </div>
-
-    <script>
-        function myFunction(x){
-            if(x.classList.contains('fa-plus')){
-                alert("Added to watchlist!");
-                // x.classList.replace("fa-plus","fa-check");
-            }
-            else {
-                alert("Removed to watchlist!");
-                // x.classList.replace("fa-check","fa-plus");
-            }
-        }
-    </script>
 @endsection

@@ -25,13 +25,13 @@
             <div class="selection-nav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="{{url('/')}}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Movies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Actors</a>
+                        <a class="nav-link" href="{{url('/actor')}}">Actors</a>
                     </li>
                 @auth
                     @if (Auth::user()->role != 'admin')

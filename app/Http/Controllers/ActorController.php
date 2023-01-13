@@ -18,7 +18,6 @@ class ActorController extends Controller
     public function actorDetail(Request $request){
         // Search actor based on id
         $actor = Actor::find($request->id);
-
         return view('contents.actor-detail', ['actor' => $actor]);
     }
 

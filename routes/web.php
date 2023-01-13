@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('contents.home');
-});
 
 Route::get('/login', function(){
     return view('contents.login');
@@ -47,12 +44,15 @@ Route::post('/movie/delete/{id}', [MovieController::class, 'deleteMovie'])->midd
 Route::post('/actor/create/addActor', [ActorController::class, 'addActor'])->middleware('adminCheck');
 Route::post('/actor/edit/{id}/editActor', [ActorController::class, 'updateActor'])->middleware('adminCheck');
 
+Route::get('/', [MovieController::class, 'homePage']);
 Route::get('/profile', function(){ return view('contents.profile'); });
 Route::get('/{id}/addToWatchlist', [UserController::class, 'addToWatchlist']);
 Route::get('/{id}/removeFromWatchlist', [UserController::class, 'removeFromWatchlist']);
-Route::get('/movie/{id}', [MovieController::class, 'movieDetail']);
+Route::get('/movie/detail/{id}', [MovieController::class, 'movieDetail']);
 Route::get('/movie/create', [MovieController::class, 'addMovieView'])->middleware('adminCheck');
 Route::get('/movie/edit/{id}', [MovieController::class, 'editMovieView'])->middleware('adminCheck');
+Route::get('/actor', [ActorController::class, 'allActors']);
+Route::get('/actor/detail/{id}', [ActorController::class, 'actorDetail']);
 Route::get('/actor/create', function(){ return view('contents.create-actor'); })->middleware('adminCheck');
 Route::get('/actor/edit/{id}', function(){ return view('contents.edit-actor'); })->middleware('adminCheck');
 Route::get('/logout', [UserController::class, 'logout']);

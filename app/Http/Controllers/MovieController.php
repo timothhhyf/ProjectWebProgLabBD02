@@ -92,13 +92,13 @@ class MovieController extends Controller
         }
 
         // Thumbnail & background
-        $thumbnail = $request->file('thumbnail');
+        $thumbnail = $request->file('movieImage');
         $thumbnailName = time() . '.' . $thumbnail->getClientOriginalExtension();
-        // Storage::putFileAs('public/images/movies/thumbnail', $thumbnail, $thumbnailName);
+        Storage::putFileAs('public/images/movies/thumbnail', $thumbnail, $thumbnailName);
 
-        $background = $request->file('background');
+        $background = $request->file('movieBackgroundImage');
         $backgroundName = time() . '.' . $background->getClientOriginalExtension();
-        // Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
+        Storage::putFileAs('public/images/movies/background', $background, $backgroundName);
 
         // Insert data to $movie
         $movie->title = $request->title;
@@ -113,17 +113,15 @@ class MovieController extends Controller
         // Save genre & actors of the movie
         // attach each movie with their newly inputted genre
         $genres = Genre::whereIn('id', $request->genre)->get();
-        $movie->genres()->attach($genres);
+        $movie->genres()->sync($genres);
 
         // updating actors and their respective character that they play in to the movie
-        $newRoles = [];
+        $newRoles = array();
         foreach($request->actor as $key => $actor){
-            $actor = Actor::find($actor);
-            $newRoles[$key] = [$actor => ['character' => $request->charName[$key]]];
+            $newRoles[$actor] = ['character' => $request->charName[$key]];
         }
         $movie->actors()->sync($newRoles);
-
-        return redirect()->back()->back();
+        return redirect('/movie/detail/'.$movie->id);
    }
 
    public function movieDetail(Request $request){
@@ -148,9 +146,15 @@ class MovieController extends Controller
 
    public function homePage(){
         $heroMovies = Movie::inRandomOrder()->take(3)->get();
-        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id')->orderBy('total_added', 'desc')->get();
+        // $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id')->orderBy('total_added', 'desc')->get();
         $allMovies = Movie::all();
-        return redirect("/", ['heroMovies' => $heroMovies, 'popular' => $popular, 'allMovies' => $allMovies]);
+        $genres = Genre::all();
+        $watchlist = [];
+        foreach($allMovies as $i => $am){
+            $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+            $watchlist[$i] = [$am->id => $status];
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'allMovies' => $allMovies, 'genres' => $genres, 'status' => $watchlist]);
    }
 
    public function searchMovie(Request $request){
