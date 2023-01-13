@@ -164,9 +164,25 @@ class MovieController extends Controller
         return view('contents.create-movie', ['actors' => $actors, 'genres' => $genres]);
    }
 
-   public function editMovieView(){
-    $actors = Actor::all();
-    $genres = Genre::all();
-    return view('contents.edit-movie', ['actors' => $actors, 'genres' => $genres]);
-}
+   public function editMovieView(Request $request){
+        $movie = Movie::find($request->id);
+        $actors = Actor::all();
+        $genres = Genre::all();
+        return view('contents.edit-movie', ['movie' => $movie, 'actors' => $actors, 'genres' => $genres]);
+    }
+
+    public function ascendingFilter(){
+        $movies = Movie::groupBy('title')->orderBy('asc');
+        return view('contents.home', ['movies' => $movies]);
+    }
+
+    public function descendingFilter(){
+        $movies = Movie::groupBy('title')->orderBy('desc');
+        return view('contents.home', ['movies' => $movies]);
+    }
+
+    public function latestFilter(){
+        $movies = Movie::groupBy('release_date')->orderBy('desc');
+        return view('contents.home', ['movies' => $movies]);
+    }
 }

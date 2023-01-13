@@ -39,7 +39,8 @@
                     <div class="movie-detail-story-line-director">
                         <div class="movie-detail-story-line">
                             <h5>Storyline</h5>
-                            <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p>
+                            {{-- <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p> --}}
+
                         </div>
                         <div class="movie-detail-story-director">
                             <h5>{{ $movie->director }}</h5>
@@ -93,33 +94,12 @@
             var x = document.getElementById("plus-btn");
             if(x.classList.contains('fa-plus')){
                 alert("Added to watchlist!");
-                x.classList.replace("fa-plus","fa-check");
+                // x.classList.replace("fa-plus","fa-check");
             }
             else {
                 alert("Removed to watchlist!");
-                x.classList.replace("fa-check","fa-plus");
+                // x.classList.replace("fa-check","fa-plus");
             }
         }
     </script>
-
-
-    {{-- {{ $movie->title }}
-    {{ Storage::url('images/movies/thumbnail/'.$movie->image); }}
-    {{ Storage::url('images/movies/background/'.$movie->background_img); }}
-    @foreach ($movie->genres() as $g)
-        {{ $g->name }}
-    @endforeach
-    {{ date('Y', strtotime($movie->release_date)) }}
-    {{ $movie->description }}
-    {{ $movie->director }}
-    @foreach ($movie->actors() as $a)
-        {{ $a->name }}
-        {{ $a->pivot->character }}
-    @endforeach
-
-    @foreach ($movies as $m)
-        {{ Storage::url('images/movies/thumbnail/'.$m->image) }}
-        {{ $m->title }}
-        {{ date('Y', strtotime($m->release_date)) }}
-    @endforeach --}}
 @endsection
