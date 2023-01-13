@@ -24,10 +24,10 @@
 }
 
 .form-control.modal-control::placeholder{
-margin: 0;
-padding: 0;
-color: #60676f;
-font-size: medium;
+    margin: 0;
+    padding: 0;
+    color: #60676f;
+    font-size: medium;
 }
 
 .modal-body p{

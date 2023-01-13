@@ -695,17 +695,17 @@ input:focus::placeholder{
 }
 
 .form-control.modal-control::-moz-placeholder{
-margin: 0;
-padding: 0;
-color: #60676f;
-font-size: medium;
+    margin: 0;
+    padding: 0;
+    color: #60676f;
+    font-size: medium;
 }
 
 .form-control.modal-control::placeholder{
-margin: 0;
-padding: 0;
-color: #60676f;
-font-size: medium;
+    margin: 0;
+    padding: 0;
+    color: #60676f;
+    font-size: medium;
 }
 
 .modal-body p{
@@ -1527,6 +1527,162 @@ font-size: medium;
     max-width: 150px;
     font-size: x-small;
     font-weight: 400;
+}
+
+.watchlist-content{
+    margin: 40px 80px 30px 80px;
+}
+
+.watchlist-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.watchlist-title i{
+    font-size: xx-large;
+    color: #fd3640;
+    padding-right: 10px;
+}
+
+.watchlist-title h1{
+    font-size: x-large;
+}
+
+.form-control.me-sm-2.watchlist-search{
+    background-color: #4b4b4d;
+    color: white;
+    padding-right: 40px;
+}
+
+.form-control.me-sm-2.watchlist-search::-moz-placeholder{
+    color: #595959;
+}
+
+.form-control.me-sm-2.watchlist-search::placeholder{
+    color: #595959;
+}
+
+.form-control.me-sm-2.watchlist-search:focus::-moz-placeholder{
+    color: transparent;
+}
+
+.form-control.me-sm-2.watchlist-search:focus::placeholder{
+    color: transparent;
+}
+
+.watchlist-search-bar form{
+    position: relative;
+}
+
+.watchlist-search-bar form span{
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+.watchlist-search-bar form span button{
+    background-color: transparent;
+    border: none;
+}
+
+.watchlist-filter{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0 20px 0;
+    align-items: center;
+}
+
+.watchlist-filter i{
+    font-size: large;
+    padding-right: 10px;
+    color: #88878d;
+}
+
+.watchlist-filter select{
+    height: 30px;
+    width: 140px;
+    padding-top: 3px;
+    font-size: small;
+    background-color: transparent;
+    color: white;
+}
+
+.watchlist-filter select option{
+    background-color: white;
+    color: black;
+}
+
+.watchlist-filter select option:hover{
+    box-shadow: 0 0 10px 100px rgb(114, 114, 114) inset;
+    color:white;
+}
+
+.real-watchlist-grid-header{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 25% 40% 25% 10%;
+}
+
+.real-watchlist-grid-header h6{
+    font-size: small;
+}
+
+.real-watchlist-grid-content{
+    background-color: #1a1a1c;
+    margin: 5px 0 15px 0;
+    display: grid;
+    grid-template-columns: 25% 40% 25% 10%;
+    align-items: center;
+}
+
+.real-watchlist-grid-content h6{
+    font-size: small;
+}
+
+.real-watchlist-grid-content img{
+    width: 75px;
+    height: 100px;
+    -o-object-fit: fill;
+       object-fit: fill;
+}
+
+.real-watchlist-grid-content i{
+    width: 10px;
+    color: white;
+}
+
+.real-watchlist-grid-content i:hover{
+    color: rgb(152, 152, 152);
+    cursor: pointer;
+}
+
+.amount-and-paginate{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    position: relative;
+    margin: 40px 0 0 0;
+}
+
+.page-number{
+    position:absolute;
+    left: 48.5%;
+}
+
+.show-amount{
+    color: #62656b;
+}
+
+.pagination{
+    --bs-pagination-bg: #ffffff;
+    --bs-pagination-color: rgb(95, 95, 95);
+    --bs-pagination-hover-bg: #666666;
+    --bs-pagination-hover-color: rgb(255, 255, 255);
+    --bs-pagination-focus-color: #ffffff;;
+    --bs-pagination-focus-bg: #9e9e9e;
 }
 
 body{
