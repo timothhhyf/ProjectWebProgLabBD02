@@ -10,6 +10,7 @@
 @import "actors-list.css";
 @import "home.css";
 @import "actor-detail.css";
+@import "watchlist.css";
 
 body{
     background-color: black;

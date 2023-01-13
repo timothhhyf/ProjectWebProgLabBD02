@@ -34,6 +34,7 @@ Route::view('/edit-actor', 'contents.edit-actor');
 Route::view('/movie-detail', 'contents.movie-detail');
 Route::view('/actors-list', 'contents.actor');
 Route::view('/actor-detail', 'contents.actor-detail');
+Route::view('/watchlist', 'contents.watchlist');
 
 Route::post('/login/authLogin', [UserController::class, 'login']);
 Route::post('/register/addUser', [UserController::class, 'register']);
