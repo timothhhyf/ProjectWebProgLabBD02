@@ -1102,15 +1102,58 @@ font-size: medium;
 }
 
 .actors-list{
-    margin: 0 85px 0 85px;
-    display: grid;
-    grid-auto-columns: 120px;
+    margin: 0 85px 35px 85px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 .actors-list-image-info{
-    margin: 0 85px 0 85px;
-    display: grid;
-    grid-auto-columns: 120px;
+    background-color: #1f1f1f;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actors-list-image-info img{
+    margin: 10px 10px 5px 10px;
+    width: 150px;
+    height: 200px;
+}
+
+.actor-name-and-movie{
+    margin: 0 10px 0 10px;
+}
+
+.actor-name-info{
+    margin-top: 5px;
+    max-width: 150px;
+}
+
+.actor-name-info p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    color:rgb(255, 255, 255) !important;
+}
+
+.actor-movie-name{
+    max-width: 150px;
+}
+
+.actor-movie-name p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: x-small;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    color:rgb(155, 155, 155) !important;
 }
 
 #slider {
@@ -1402,6 +1445,88 @@ font-size: medium;
 
 .home-movie-list img{
     border-radius: 7px;
+}
+
+.actor-detail-page{
+    margin: 40px 80px 20px 80px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+}
+
+.actor-detail-img-and-personal-info img{
+    border-radius: 7px;
+    border: 1px solid rgb(124, 124, 124);
+    width: 187.5px;
+    height: 250px;
+}
+
+.actor-detail-img-and-personal-info h4{
+    margin: 0;
+    font-size:larger;
+    font-weight: light;
+    padding: 15px 0 15px 0;
+}
+
+.actor-detail-img-and-personal-info p{
+    margin: 0;
+    font-size: x-small;
+    padding: 5px 0 10px 0;
+    color: #565b61;
+}
+
+.actor-detail-img-and-personal-info h6{
+    margin: 0;
+    font-size: small;
+}
+
+.actor-name-bio-known-for{
+    margin-left: 35px;
+}
+
+.actor-name-bio-known-for h1{
+    font-size: xx-large;
+}
+
+.actor-detail-biography h4{
+    font-size: large;
+}
+
+.actor-detail-biography p{
+    font-size: small;
+    text-align: justify;
+}
+
+.actor-detail-known-for h4{
+    font-size: large;
+}
+
+.actor-movies-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.actor-movies-list img{
+    width: 170px;
+    height: 205px;
+    padding: 10px 10px 5px 10px;
+}
+
+.movie-list-image-info{
+    background-color: #1f1f1f;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actor-movie-title{
+    margin: 10px 10px 0 10px;
+    max-width: 150px;
+    font-size: x-small;
+    font-weight: 400;
 }
 
 body{

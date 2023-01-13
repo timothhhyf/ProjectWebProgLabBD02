@@ -9,6 +9,7 @@
 @import "movie-detail.css";
 @import "actors-list.css";
 @import "home.css";
+@import "actor-detail.css";
 
 body{
     background-color: black;

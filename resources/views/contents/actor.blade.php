@@ -12,17 +12,35 @@
         </form>
     </div>
     <div class="actors-list">
-        <div class="movie-detail-more">
-            <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-            <div class="movie-detail-title-and-year">
-                <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                <div class="movie-detail-year-and-icon">
-                    <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                    <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn" onclick="myFunction();"></i></a>
+        {{-- loop aja udah aman --}}
+        <div class="actors-list-image-info">
+            <a href="" style="text-decoration: none; color:inherit;">
+                <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
+                <div class="actor-name-and-movie">
+                    <div class="actor-name-info">
+                        <p>Benedict Cumberbatch</p>
+                    </div>
+                    <div class="actor-movie-name">
+                        <p>Spiderman No Where Home 1000</p>
+                    </div>
                 </div>
-            </div>
+            </a>
+        </div>
+        <div class="actors-list-image-info">
+            <a href="" style="text-decoration: none; color:inherit;">
+                <img src="{{url('/asset/keanureeves.jpeg')}}" alt="">
+                <div class="actor-name-and-movie">
+                    <div class="actor-name-info">
+                        <p>Benedict Cumberbatch</p>
+                    </div>
+                    <div class="actor-movie-name">
+                        <p>Spiderman No Where Home 1000</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
+
 
     {{-- @foreach ($actors as $a)
         {{ $a->name }}
