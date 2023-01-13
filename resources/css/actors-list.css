@@ -1,0 +1,97 @@
+.actors-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 85px 20px 85px;
+    height: 45px;
+}
+
+.actors-header h3{
+    color: #d23f48;
+    font-weight: bold;
+    margin: 0;
+}
+
+.d-flex{
+    width: 300px;
+}
+
+.form-control.me-sm-2{
+    background-color: #1f1f1f;
+    color: white;
+    font-size: small;
+    height: 35px;
+    margin-right: 12px !important;
+}
+
+.form-control.me-sm-2::placeholder{
+    padding-left: 0;
+    color: #565656;
+}
+
+.form-control.me-sm-2:focus::placeholder{
+    color: transparent;
+}
+
+.btn.btn-secondary.my-2.my-sm-0{
+    width: 120px;
+    background-color: #dd3444;
+    font-size: small;
+    height: 35px;
+}
+
+.actors-list{
+    margin: 0 85px 35px 85px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.actors-list-image-info{
+    background-color: #1f1f1f;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.actors-list-image-info img{
+    margin: 10px 10px 5px 10px;
+    width: 150px;
+    height: 200px;
+}
+
+.actor-name-and-movie{
+    margin: 0 10px 0 10px;
+}
+
+.actor-name-info{
+    margin-top: 5px;
+    max-width: 150px;
+}
+
+.actor-name-info p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    color:rgb(255, 255, 255) !important;
+}
+
+.actor-movie-name{
+    max-width: 150px;
+}
+
+.actor-movie-name p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: x-small;
+    font-weight: bold;
+    margin: 5px 0 10px 0;
+    color:rgb(155, 155, 155) !important;
+}

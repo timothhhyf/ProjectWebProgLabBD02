@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">    <title>@yield('title')</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <div class="movie-detail">
         <div class="movie-detail-background">
@@ -90,8 +90,7 @@
     </div>
 
     <script>
-        function myFunction(){
-            var x = document.getElementById("plus-btn");
+        function myFunction(x){
             if(x.classList.contains('fa-plus')){
                 alert("Added to watchlist!");
                 // x.classList.replace("fa-plus","fa-check");
