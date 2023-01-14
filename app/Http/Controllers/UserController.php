@@ -170,4 +170,9 @@ class UserController extends Controller
         $movies = Movie::wherePivot('status', $request->status);
         return view('contents.watchlist', ['movies' => $movies]);
     }
+
+    public function search(Request $request){
+        $movies = Movie::where('title', 'LIKE', "%$request->name%")->get();
+        return view('contents.watchlist', ['movies' => $movies]);
+    }
 }

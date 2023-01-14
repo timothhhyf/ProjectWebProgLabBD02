@@ -12,8 +12,9 @@
             <h1 style="color:#da404d;">Watchlist</h1>
         </div>
         <div class="watchlist-search-bar">
-            <form>
-                <input class="form-control me-sm-2 watchlist-search" type="search" placeholder="Search your watchlist...">
+            <form action="" method="GET" id="searchForm">
+                {{ csrf_field() }}
+                <input id="searchBar" class="form-control me-sm-2 watchlist-search" type="search" placeholder="Search your watchlist...">
                 <span><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></span>
             </form>
         </div>
@@ -70,6 +71,19 @@
               </div>
         </div>
     </div>
+
+    <script>
+        var inputField = document.getElementById("searchBar");
+        var form = document.getElementById("searchForm");
+
+        inputField.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                form.action = '/watchlist/search=' + inputField.value;
+                form.submit();
+            }
+        });
+    </script>
 
     @include('modal.action')
 

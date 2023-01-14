@@ -147,24 +147,37 @@ class MovieController extends Controller
    public function homePage(){
         $heroMovies = Movie::inRandomOrder()->take(3)->get();
         $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
-        $allMovies = Movie::all();
+        $movies = Movie::all();
         $genres = Genre::all();
 
         if(Auth::check()){
             $watchlist = [];
-            foreach($allMovies as $i => $am){
+            foreach($movies as $i => $am){
                 $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
                 $watchlist[$i] = [$am->id => $status];
             }
         }else{
             $watchlist[0] = false;
         }
-        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'allMovies' => $allMovies, 'genres' => $genres, 'status' => $watchlist]);
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
    }
 
    public function searchMovie(Request $request){
-        $movies = Movie::where('title', 'LIKE', "%$request->title%");
-        return view('contents.home', ['movies' => $movies]);
+        $heroMovies = Movie::inRandomOrder()->take(3)->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
+        $movies = Movie::where('title', 'LIKE', "%$request->name%")->get();
+        $genres = Genre::all();
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
    }
 
    public function addMovieView(){
@@ -180,18 +193,76 @@ class MovieController extends Controller
         return view('contents.edit-movie', ['movie' => $movie, 'actors' => $actors, 'genres' => $genres]);
     }
 
+    public function genreFilter(Request $request){
+        $heroMovies = Movie::inRandomOrder()->take(3)->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
+        $filterGenre = Genre::find($request->id);
+        $movies = $filterGenre->movies()->get();
+        $genres = Genre::all();
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
+    }
+
     public function ascendingFilter(){
-        $movies = Movie::groupBy('title')->orderBy('asc');
-        return view('contents.home', ['movies' => $movies]);
+        $heroMovies = Movie::inRandomOrder()->take(3)->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
+        $movies = Movie::orderBy('title', 'asc')->get();
+        $genres = Genre::all();
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
     }
 
     public function descendingFilter(){
-        $movies = Movie::groupBy('title')->orderBy('desc');
-        return view('contents.home', ['movies' => $movies]);
+        $heroMovies = Movie::inRandomOrder()->take(3)->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
+        $movies = Movie::orderBy('title', 'desc')->get();
+        $genres = Genre::all();
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
     }
 
     public function latestFilter(){
-        $movies = Movie::groupBy('release_date')->orderBy('desc');
-        return view('contents.home', ['movies' => $movies]);
+        $heroMovies = Movie::inRandomOrder()->take(3)->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
+        $movies = Movie::orderBy('release_date', 'desc')->get();
+        $genres = Genre::all();
+
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
+        }
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'movies' => $movies, 'genres' => $genres, 'status' => $watchlist]);
     }
 }

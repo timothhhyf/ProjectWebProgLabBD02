@@ -6,14 +6,13 @@
     {{-- Actor Page HTML --}}
     <div class="actors-header">
         <h3>Actors</h3>
-        <form class="d-flex">
-            <input class="form-control me-sm-2" type="search" placeholder="Search Actor Address">
+        <form class="d-flex" action="" method="GET" id="searchForm">
+            {{ csrf_field() }}
+            <input class="form-control me-sm-2" type="search" id="searchBar" placeholder="Search Actor Address">
             @if (Auth::check() && Auth::user()->role == 'admin')
-                {{-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                    Add Actor
-                </button> --}}
                 <a href="{{ url('/actor/create') }}" class="btn btn-secondary my-2 my-sm-0">Add Actor</a>
             @endif
+            <input type="submit" value="" hidden>
         </form>
     </div>
     <div class="actors-list">
@@ -33,4 +32,17 @@
             </div>
         @endforeach
     </div>
+
+    <script>
+        var inputField = document.getElementById("searchBar");
+        var form = document.getElementById("searchForm");
+
+        inputField.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                form.action = '/actor/search=' + inputField.value;
+                form.submit();
+            }
+        });
+    </script>
 @endsection

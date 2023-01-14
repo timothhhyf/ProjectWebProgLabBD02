@@ -46,20 +46,20 @@
               <i class="fas fa-angle-double-left"></i>
             </button>
             <div class="scroll-images">
-                @foreach ($popular as $p)
+                @foreach ($popular as $i => $p)
                     <div class="movie-detail-more.home-popular-list">
                         <a href="/movie/detail/{{ $p->id }}"><img src="{{ Storage::url('images/movies/thumbnail/'.$p->image) }}" alt=""></a>
                         <div class="movie-detail-title-and-year" style="max-width:187.5px;">
                             <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">{{ $p->title }}</a></p>
                             <div class="movie-detail-year-and-icon">
                                 <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($p->release_date)) }}</a></p>
-                                @if (Auth::check() && Auth::user()->role != 'admin')
-                                    @if ($status[$i][$am->id] == true)
-                                        <a href="/{{ $am->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
+                                {{-- @if (Auth::check() && Auth::user()->role != 'admin')
+                                    @if ($status[$i][$p->id] == true)
+                                        <a href="/{{ $p->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
                                     @else
-                                        <a href="/{{ $am->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                                        <a href="/{{ $p->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
                                     @endif
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </div>
@@ -73,9 +73,10 @@
 
     <div class="show-and-search-bar">
         <h4 class="show-title"><i class="fa-solid fa-film" style="margin-right: 12px;"></i>Show</h4>
-        <form class="d-flex" action="" method="POST">
+        <form class="d-flex" action="" method="get" id="searchForm">
             {{ csrf_field() }}
-            <input class="form-control me-sm-2" style="margin-right: 0 !important;" type="search" placeholder="Search movie..">
+            <input class="form-control me-sm-2" style="margin-right: 0 !important;" type="search" placeholder="Search movie.." id="searchBar">
+            <input type="submit" value="" hidden>
         </form>
     </div>
     <div class="home-genre-selection">
@@ -85,7 +86,7 @@
             </button>
             <div class="scroll-genres">
                 @foreach ($genres as $g)
-                    <a href="">
+                    <a href="/filterGenre/{{ $g->id }}">
                         <p>{{ $g->name }}</p>
                     </a>
                 @endforeach
@@ -99,8 +100,8 @@
         <div class="home-movie-sort-by">
             <h1 style="font-size: small;">Sort By:</h1>
             <a href="">Latest</a>
-            <a href="">A-Z</a>
-            <a href="">Z-A</a>
+            <a href="/filterA-Z">A-Z</a>
+            <a href="/filterZ-A">Z-A</a>
         </div>
         @if (Auth::check() && Auth::user()->role == 'admin')
             <div class="add-more-movie-admin">
@@ -109,7 +110,7 @@
         @endif
     </div>
     <div class="home-movie-list">
-        @foreach ($allMovies as $i => $am)
+        @foreach ($movies as $i => $am)
             <div class="movie-detail-more">
                 <a href="/movie/detail/{{ $am->id }}"><img src="{{ Storage::url('images/movies/thumbnail/'. $am->image); }}" alt=""></a>
                 <div class="movie-detail-title-and-year home-movie-detail-title-and-year">
@@ -128,6 +129,19 @@
             </div>
         @endforeach
     </div>
+
+    <script>
+        var inputField = document.getElementById("searchBar");
+        var form = document.getElementById("searchForm");
+
+        inputField.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                form.action = '/movie/search=' + inputField.value;
+                form.submit();
+            }
+        });
+    </script>
 
     <script>
         var responsiveSlider = function() {

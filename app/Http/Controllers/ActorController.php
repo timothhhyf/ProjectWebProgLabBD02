@@ -132,4 +132,9 @@ class ActorController extends Controller
         $actor->delete();
         return redirect('/actor');
     }
+
+    public function searchActor(Request $request){
+        $actors = Actor::where('name', 'LIKE', "%$request->name%")->get();
+        return view('contents.actor', ['actors' => $actors]);
+    }
 }
