@@ -46,176 +46,24 @@
               <i class="fas fa-angle-double-left"></i>
             </button>
             <div class="scroll-images">
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
+                @foreach ($popular as $p)
+                    <div class="movie-detail-more.home-popular-list">
+                        <a href="/movie/detail/{{ $p->id }}"><img src="{{ Storage::url('images/movies/thumbnail/'.$p->image) }}" alt=""></a>
+                        <div class="movie-detail-title-and-year" style="max-width:187.5px;">
+                            <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">{{ $p->title }}</a></p>
+                            <div class="movie-detail-year-and-icon">
+                                <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($p->release_date)) }}</a></p>
+                                @if (Auth::check() && Auth::user()->role != 'admin')
+                                    @if ($status[$i][$am->id] == true)
+                                        <a href="/{{ $am->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
+                                    @else
+                                        <a href="/{{ $am->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                                    @endif
+                                @endif
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="movie-detail-more.home-popular-list">
-                    <a href=""><img src="{{url('/asset/keanureeves.jpeg')}}" alt=""></a>
-                    <div class="movie-detail-title-and-year" style="max-width:187.5px;">
-                        <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">The Kungfu Panda 10 blabla 11</a></p>
-                        <div class="movie-detail-year-and-icon">
-                            <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">2021</a></p>
-                            <a style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i  onclick="myFunction(this)" class="fa-solid fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="right" onclick="rightScroll()">
               <i class="fas fa-angle-double-right"></i>

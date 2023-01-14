@@ -146,7 +146,7 @@ class MovieController extends Controller
 
    public function homePage(){
         $heroMovies = Movie::inRandomOrder()->take(3)->get();
-        // $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id')->orderBy('total_added', 'desc')->get();
+        $popular = DB::table('movies')->join('genre_movie', 'movies.id', '=', 'genre_movie.movie_id')->select('movies.*', DB::raw('count(*) as total_added'))->groupBy('movies.id', 'movies.title', 'movies.description', 'movies.director', 'movies.release_date', 'movies.image', 'movies.background_img', 'movies.created_at', 'movies.updated_at')->orderBy('total_added', 'desc')->get();
         $allMovies = Movie::all();
         $genres = Genre::all();
 
@@ -159,7 +159,7 @@ class MovieController extends Controller
         }else{
             $watchlist[0] = false;
         }
-        return view('contents.home', ['heroMovies' => $heroMovies, 'allMovies' => $allMovies, 'genres' => $genres, 'status' => $watchlist]);
+        return view('contents.home', ['heroMovies' => $heroMovies, 'popular' => $popular, 'allMovies' => $allMovies, 'genres' => $genres, 'status' => $watchlist]);
    }
 
    public function searchMovie(Request $request){
