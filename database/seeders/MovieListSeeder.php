@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class MovieListSeeder extends Seeder
 {
@@ -13,6 +15,6 @@ class MovieListSeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }
