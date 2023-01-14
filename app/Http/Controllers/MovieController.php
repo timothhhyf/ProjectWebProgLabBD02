@@ -129,10 +129,14 @@ class MovieController extends Controller
         $movie = Movie::find($request->id);
         $user = Auth::user();
         $randomMovies = Movie::all()->shuffle()->take(8);
-        $watchlist = [];
-        foreach($randomMovies as $i => $rm){
-            $status = ($user->movies()->where('movie_id', $rm->id)->exists()) ? true : false;
-            $watchlist[$i] = [$rm->id => $status];
+        if(Auth::check()){
+            $watchlist = [];
+            foreach($movies as $i => $am){
+                $status = (Auth::user()->movies()->where('movie_id', $am->id)->exists()) ? true : false;
+                $watchlist[$i] = [$am->id => $status];
+            }
+        }else{
+            $watchlist[0] = false;
         }
 
         return view('contents.movie-detail', ['movie' => $movie, 'randomMovies' => $randomMovies, 'status' => $watchlist]);

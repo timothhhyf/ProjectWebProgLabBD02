@@ -19,7 +19,7 @@
                 <div class="movie-detail-explanation">
                     <div class="movie-detail-title">
                         <h1>{{ $movie->title }}</h1>
-                        @if (Auth::user()->role == 'admin')
+                        @if (Auth::check() && Auth::user()->role == 'admin')
                             <div>
                                 <a href="/movie/edit/{{ $movie->id }}"><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a href="/movie/delete/{{ $movie->id }}"><i class="fa-regular fa-trash-can"></i></a>

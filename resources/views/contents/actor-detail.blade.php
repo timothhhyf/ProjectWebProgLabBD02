@@ -50,7 +50,7 @@
                     {{-- loop aja udh aman --}}
                     @foreach ($actor->movies()->get() as $m)
                         <div class="movie-list-image-info">
-                            <a href="" style="text-decoration: none; color:white;">
+                            <a href="/movie/detail/{{ $m->id }}" style="text-decoration: none; color:white;">
                             <img src="{{ Storage::url('images/movies/thumbnail/'. $m->image); }}" alt="">
                             <div class="actor-movie-title">
                                 <p>{{ $m->title }}</p>
