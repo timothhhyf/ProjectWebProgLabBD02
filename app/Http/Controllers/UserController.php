@@ -167,7 +167,12 @@ class UserController extends Controller
     }
 
     public function filterWatchlist(Request $request){
-        $movies = Movie::wherePivot('status', $request->status);
+        $user = User::find(Auth::user()->id);
+        if($request->status == 'All'){
+            $movies = $user->movies()->get();
+        }else{
+            $movies = $user->movies()->wherePivot('status', $request->status)->get();
+        }
         return view('contents.watchlist', ['movies' => $movies]);
     }
 

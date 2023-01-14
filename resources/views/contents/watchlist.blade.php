@@ -20,12 +20,12 @@
         </div>
         <div class="watchlist-filter">
             <i class="fa-solid fa-filter"></i>
-            <select class="form-select watchlist-filter-select" onchange="location.href=this.value;">
+            <select class="form-select watchlist-filter-select" onchange="location.href='/watchlist/' + this.value;">
                 {{-- coba masukin value di sini contohnya kayak href link aja buat ke web.php --}}
-                <option value="">All</option>
-                <option value="">Planned</option>
-                <option value="">Watching</option>
-                <option value="">Finished</option>
+                <option value="All">All</option>
+                <option value="Planning">Planned</option>
+                <option value="Watching">Watching</option>
+                <option value="Finished">Finished</option>
             </select>
         </div>
         <div class="real-watchlist-grid-header">

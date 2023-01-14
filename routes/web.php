@@ -57,6 +57,7 @@ Route::get('/profile', function(){ return view('contents.profile'); });
 Route::get('/{id}/addToWatchlist', [UserController::class, 'addToWatchlist']);
 Route::get('/{id}/removeFromWatchlist', [UserController::class, 'removeFromWatchlist']);
 Route::get('/watchlist/search={name}', [UserController::class, 'search']);
+Route::get('/watchlist/{status}', [UserController::class, 'filterWatchlist']);
 Route::get('/movie/search={name}', [MovieController::class, 'searchMovie']);
 Route::get('/movie/detail/{id}', [MovieController::class, 'movieDetail']);
 Route::get('/movie/create', [MovieController::class, 'addMovieView'])->middleware('adminCheck');
