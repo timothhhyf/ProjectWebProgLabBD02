@@ -254,7 +254,7 @@
             <a href="">A-Z</a>
             <a href="">Z-A</a>
         </div>
-        @if (Auth::check() && Auth::user() == 'admin')
+        @if (Auth::check() && Auth::user()->role == 'admin')
             <div class="add-more-movie-admin">
                 <a href="/movie/create"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add Movie</a>
             </div>

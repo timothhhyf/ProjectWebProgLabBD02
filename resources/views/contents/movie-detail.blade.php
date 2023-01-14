@@ -77,10 +77,12 @@
                         <p style="font-size:small; font-weight:bold; padding: 2px 10px 2px 10px;"><a href="" style="text-decoration: none; color: white;">{{ $rm->title }}</a></p>
                         <div class="movie-detail-year-and-icon">
                             <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($rm->release_date)) }}</a></p>
-                            @if ($status[$i][$rm->id] == true)
-                                <a href="/{{ $rm->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
-                            @else
-                                <a href="/{{ $rm->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                            @if (Auth::check() && Auth::user()->role != 'admin')
+                                @if ($status[$i][$rm->id] == true)
+                                    <a href="/{{ $rm->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
+                                @else
+                                    <a href="/{{ $rm->id }}/addToWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-plus" id="plus-btn"></i></a>
+                                @endif
                             @endif
                         </div>
                     </div>
