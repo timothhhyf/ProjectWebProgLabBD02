@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class ActorSeeder extends Seeder
 {
@@ -14,16 +15,19 @@ class ActorSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('id_ID');
         //
-        DB::table('actors')->insert([
-            'id' => '1',
-            'name' => 'Benedict Cumberbatch',
-            'gender' => 'Male',
-            'biography' => 'Benedict Timothy Carlton Cumberbatch CBE (born 19 July 1976) is an English actor. Known for his work on screen and stage, he has received various accolades, including a British Academy Television Award, a Primetime Emmy Award and a Laurence Olivier Award.',
-            'dob' => '1976-07-19',
-            'pob' => 'Hammersmith, London, England',
-            'image' => '1673418816.jpg',
-            'popularity' => 20000000
-        ]);
+
+        for($i=1; $i<=5; $i++){
+            DB::table('actors')->insert([
+                'name' => $faker->name(),
+                'gender' => $faker->randomElement($array = array ('male', 'female')) ,
+                'biography' => $faker->paragraph(10),
+                'dob' => $faker->dateTimeBetween('-50 years', '-15 years'),
+                'pob' => $faker->country(),
+                'image' => 'actor'.$i.'.jpg',
+                'popularity' => $faker->numberBetween()
+            ]);
+        }
     }
 }
