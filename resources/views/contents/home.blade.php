@@ -27,7 +27,7 @@
                             </div>
                             {{-- <p style="font-size:small; text-align:justify;">Plague by strange memories, Neo"s life takes an unexpected turn when he finds himself back inside the Matrix.</p> --}}
                             <p style="font-size:small; text-align:justify;">{{ $hm->description }}</p>
-                            @if (Auth::check())
+                            @if (Auth::check() && Auth::user()->role != 'admin')
                                 <a href="" class="add-to-watchlists-btn"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add to Watchlists</a>
                             @endif
                         </div>
@@ -225,7 +225,8 @@
 
     <div class="show-and-search-bar">
         <h4 class="show-title"><i class="fa-solid fa-film" style="margin-right: 12px;"></i>Show</h4>
-        <form class="d-flex">
+        <form class="d-flex" action="" method="POST">
+            {{ csrf_field() }}
             <input class="form-control me-sm-2" style="margin-right: 0 !important;" type="search" placeholder="Search movie..">
         </form>
     </div>
@@ -253,9 +254,11 @@
             <a href="">A-Z</a>
             <a href="">Z-A</a>
         </div>
-        <div class="add-more-movie-admin">
-            <a href="/movie/create"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add Movie</a>
-        </div>
+        @if (Auth::check() && Auth::user() == 'admin')
+            <div class="add-more-movie-admin">
+                <a href="/movie/create"><i class="fa-solid fa-plus" style="font-weight: bolder"></i> Add Movie</a>
+            </div>
+        @endif
     </div>
     <div class="home-movie-list">
         @foreach ($allMovies as $i => $am)
@@ -265,7 +268,7 @@
                     <p style="font-size:small; font-weight:bold; padding: 2px 0 2px 0;"><a href="" style="text-decoration: none; color: white;">{{ $am->title }}</a></p>
                     <div class="movie-detail-year-and-icon home-movie-detail-year-and-icon">
                         <p style="font-size:x-small; font-weight:normal;"><a href="" style="text-decoration: none; color:rgb(155, 155, 155);">{{ date('Y', strtotime($am->release_date)) }}</a></p>
-                        @if (Auth::check())
+                        @if (Auth::check() && Auth::user()->role != 'admin')
                             @if ($status[$i][$am->id] == true)
                                 <a href="/{{ $am->id }}/removeFromWatchlist" style="text-decoration: none; color:rgb(155, 155, 155); font-size:small;"><i class="fa-solid fa-check" id="plus-btn"></i></a>
                             @else

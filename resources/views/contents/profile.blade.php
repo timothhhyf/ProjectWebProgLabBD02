@@ -40,19 +40,19 @@
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Username</span>
-                        <input name="username" type="username" class="form-control" value="Old Username"  autocomplete="Username">
+                        <input name="username" type="username" class="form-control" value="{{ Auth::user()->name }}"  autocomplete="Username">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Email</span>
-                        <input name="email" type="email" class="form-control" value="Old Email"  autocomplete="Email">
+                        <input name="email" type="email" class="form-control" value="{{ Auth::user()->email }}"  autocomplete="Email">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">DOB</span>
-                        <input name="dob" type="date" class="form-control" value="Old DOB"  autocomplete="DOB">
+                        <input name="dob" type="date" class="form-control" value="{{ Auth::user()->dob }}"  autocomplete="DOB">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Phone</span>
-                        <input name="phone" type="phone" class="form-control" value="Old Phone"  autocomplete="Phone">
+                        <input name="phone" type="phone" class="form-control" value="{{ Auth::user()->phone }}"  autocomplete="Phone">
                     </div>
                     @if ($errors->any())
                         {{-- Error msg --}}
